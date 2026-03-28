@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Franco Millanes Araya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { 'inter': ['Inter', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%); }
+        .text-gradient { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+
+<body class="font-inter bg-slate-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-slate-800 border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-gradient">FMA</a>
+                <a href="index.html" class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition">
+                    <i class="fas fa-arrow-left mr-2"></i>Volver al Portafolio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CV Content -->
+    <div class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="bg-slate-800 rounded-xl p-8 mb-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-40 h-40 rounded-full border-4 border-blue-500">
+                    <div class="text-center md:text-left flex-1">
+                        <h1 class="text-4xl font-bold mb-2">Franco Millanes Araya</h1>
+                        <p class="text-xl text-gray-400 mb-4">Ingeniero Informático | Full Stack Developer</p>
+                        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                            <a href="mailto:francoding.dev@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition">
+                                <i class="fas fa-envelope mr-2"></i>francoding.dev@gmail.com
+                            </a>
+                            <a href="tel:+56954849143" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition">
+                                <i class="fas fa-phone mr-2"></i>+56954849143
+                            </a>
+                            <a href="https://github.com/Franko2015" target="_blank" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Button -->
+            <div class="text-center mb-8">
+                <button onclick="downloadPDF()" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold transition">
+                    <i class="fas fa-download mr-2"></i>Descargar CV en PDF
+                </button>
+            </div>
+
+            <!-- Professional Summary -->
+            <div class="bg-slate-800 rounded-xl p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-blue-400">Resumen Profesional</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Ingeniero informático con 4 años de experiencia en desarrollo de software full stack. Especializado en crear aplicaciones web robustas con Node.js, Angular y PHP. Apasionado por resolver problemas complejos y transformar ideas en productos digitales exitosos. Mi experiencia en soporte técnico y administración de sistemas me da una perspectiva única del ciclo completo del desarrollo, desde la arquitectura hasta el despliegue y mantenimiento.
+                </p>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="bg-slate-800 rounded-xl p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-green-400">Experiencia Laboral</h2>
+                
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-6">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Ingeniero de Soporte TI</h3>
+                            <span class="text-gray-400 text-sm">May 2024 - Presente</span>
+                        </div>
+                        <h4 class="text-blue-400 mb-3">TIBOX</h4>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Soporte técnico especializado para sistemas empresariales</li>
+                            <li>• Administración y mantenimiento de infraestructura TI</li>
+                            <li>• Diagnóstico y resolución de problemas técnicos complejos</li>
+                            <li>• Implementación de soluciones de seguridad y respaldos</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Asistente de Informática</h3>
+                            <span class="text-gray-400 text-sm">Nov 2022 - Dic 2022</span>
+                        </div>
+                        <h4 class="text-purple-400 mb-3">APFRUT</h4>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Soporte técnico y mantenimiento de sistemas informáticos</li>
+                            <li>• Gestión de bases de datos y aplicaciones internas</li>
+                            <li>• Capacitación a usuarios en el uso de sistemas</li>
+                            <li>• Resolución de incidencias técnicas</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-green-500 pl-6">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Secretario Administrativo</h3>
+                            <span class="text-gray-400 text-sm">Ene 2018 - Feb 2023</span>
+                        </div>
+                        <h4 class="text-green-400 mb-3">SOC. TEL. NOVAVISIÓN SPA</h4>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Gestión administrativa integral de la empresa</li>
+                            <li>• Soporte técnico para sistemas internos</li>
+                            <li>• Mantenimiento de infraestructura tecnológica</li>
+                            <li>• Coordinación de proyectos de digitalización</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="bg-slate-800 rounded-xl p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-purple-400">Habilidades Técnicas</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-blue-400">Frontend</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span>HTML/CSS/JavaScript</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>AngularJS/Angular</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>React/Vue.js</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-green-400">Backend</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span>Node.js/Express</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>PHP</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Python</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-purple-400">Base de Datos</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span>MySQL/PostgreSQL</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>MongoDB</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-yellow-400">Herramientas</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span>Git/Docker</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>REST APIs</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="bg-slate-800 rounded-xl p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-yellow-400">Educación</h2>
+                <div class="border-l-4 border-yellow-500 pl-6">
+                    <h3 class="text-xl font-bold">Ingeniería en Informática</h3>
+                    <h4 class="text-yellow-400 mb-2">INACAP</h4>
+                    <p class="text-gray-400">2018 - 2024</p>
+                    <p class="text-gray-300 mt-2">Especialización en desarrollo de software, arquitectura de sistemas y bases de datos.</p>
+                </div>
+                <div class="border-l-4 border-yellow-500 pl-6 mt-6">
+                    <h3 class="text-xl font-bold">Analista Programador</h3>
+                    <h4 class="text-yellow-400 mb-2">INACAP</h4>
+                    <p class="text-gray-400">2016 - 2018</p>
+                    <p class="text-gray-300 mt-2">Formación en programación, desarrollo web y análisis de sistemas.</p>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="bg-slate-800 rounded-xl p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-red-400">Proyectos Destacados</h2>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-700 p-4 rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">InformaDev - Plataforma Educativa</h3>
+                        <p class="text-gray-400 mb-2">Plataforma para gestión de tareas, horarios y asignaturas educativas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">AngularJS</span>
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-700 p-4 rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">Servicios Web - Sistema Empresarial</h3>
+                        <p class="text-gray-400 mb-2">Sistema de gestión de servicios empresariales con backend robusto.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">Express</span>
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">REST API</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-700 p-4 rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">Sistema POS - Point of Sale</h3>
+                        <p class="text-gray-400 mb-2">Sistema completo de punto de venta con gestión de inventario.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-slate-600 px-2 py-1 rounded text-xs">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="bg-slate-800 rounded-xl p-8">
+                <h2 class="text-2xl font-bold mb-4 text-red-400">Contacto</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold mb-3">Información Personal</h3>
+                        <div class="space-y-2 text-gray-300">
+                            <p><i class="fas fa-envelope mr-2 text-blue-400"></i>francoding.dev@gmail.com</p>
+                            <p><i class="fas fa-phone mr-2 text-green-400"></i>+56954849143</p>
+                            <p><i class="fas fa-map-marker-alt mr-2 text-red-400"></i>Curicó, Chile</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-3">Redes Sociales</h3>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-700 hover:bg-slate-600 p-3 rounded-lg transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/Franco Alberto Millanes Araya" target="_blank" class="bg-slate-700 hover:bg-slate-600 p-3 rounded-lg transition">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://wa.me/56954849143" target="_blank" class="bg-slate-700 hover:bg-slate-600 p-3 rounded-lg transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p class="text-gray-400">&copy; 2024 Franco Millanes Araya. Todos los derechos reservados.</p>
+                <p class="text-gray-500 text-sm mt-2">Última actualización: Diciembre 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function downloadPDF() {
+            // Create a simple text-based CV for download
+            const cvContent = `
+FRANCO MILLANES ARAYA
+Ingeniero Informático | Full Stack Developer
+
+CONTACTO
+Email: francoding.dev@gmail.com
+Teléfono: +56954849143
+Ubicación: Curicó, Chile
+GitHub: github.com/Franko2015
+
+RESUMEN PROFESIONAL
+Ingeniero informático con 4 años de experiencia en desarrollo de software full stack.
+Especializado en crear aplicaciones web robustas con Node.js, Angular y PHP.
+
+EXPERIENCIA LABORAL
+
+Ingeniero de Soporte TI | TIBOX | May 2024 - Presente
+- Soporte técnico especializado para sistemas empresariales
+- Administración y mantenimiento de infraestructura TI
+- Diagnóstico y resolución de problemas técnicos complejos
+
+Asistente de Informática | APFRUT | Nov 2022 - Dic 2022
+- Soporte técnico y mantenimiento de sistemas informáticos
+- Gestión de bases de datos y aplicaciones internas
+- Capacitación a usuarios en el uso de sistemas
+
+Secretario Administrativo | SOC. TEL. NOVAVISIÓN SPA | Ene 2018 - Feb 2023
+- Gestión administrativa integral de la empresa
+- Soporte técnico para sistemas internos
+- Mantenimiento de infraestructura tecnológica
+
+HABILIDADES TÉCNICAS
+Frontend: HTML/CSS/JavaScript (Experto), AngularJS/Angular (Avanzado), React/Vue.js (Intermedio)
+Backend: Node.js/Express (Avanzado), PHP (Avanzado), Python (Intermedio)
+Base de Datos: MySQL/PostgreSQL (Avanzado), MongoDB (Intermedio)
+Herramientas: Git/Docker (Avanzado), REST APIs (Avanzado)
+
+EDUCACIÓN
+Ingeniería en Informática | INACAP | 2018 - 2024
+Analista Programador | INACAP | 2016 - 2018
+
+PROYECTOS DESTACADOS
+- InformaDev: Plataforma educativa con AngularJS, Node.js y MySQL
+- Servicios Web: Sistema empresarial con Node.js, Express y REST API
+- Sistema POS: Punto de venta con JavaScript, Node.js y SQL
+            `;
+            
+            const blob = new Blob([cvContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Franco_Millanes_CV.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

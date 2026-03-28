@@ -3,384 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franco Millanes Araya - Desarrollador Full Stack</title>
-    <meta name="description" content="Desarrollador Full Stack con 4 años de experiencia en desarrollo web, Android y aplicaciones de escritorio. Especializado en Angular, Node.js, PHP y sistemas de gestión.">
-    <meta name="author" content="Franco Millanes Araya">
-    <meta name="keywords" content="desarrollador full stack, programador web, Angular, Node.js, PHP, Chile, Curicó">
-    
-    <!-- Tailwind CSS -->
+    <title>Franco Millanes Araya - Full Stack Developer</title>
+    <meta name="description" content="Desarrollador Full Stack con 4 años de experiencia en Node.js, Angular, PHP y sistemas empresariales.">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom Configuration -->
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary': {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        'secondary': {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'slide-in-left': 'slideInLeft 0.6s ease-out',
-                        'slide-in-right': 'slideInRight 0.6s ease-out',
-                        'bounce-in': 'bounceIn 0.8s ease-out',
-                        'gradient': 'gradient 3s ease infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        bounceIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.3)' },
-                            '50%': { opacity: '1', transform: 'scale(1.05)' },
-                            '70%': { transform: 'scale(0.9)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
-                        },
-                        gradient: {
-                            '0%, 100%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
+            theme: { extend: { fontFamily: { 'inter': ['Inter', 'sans-serif'] } } }
         }
     </script>
-    
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-size: 200% 200%;
-            animation: gradient 3s ease infinite;
-        }
-        
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-progress {
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            background-size: 200% 100%;
-            animation: gradient 2s ease infinite;
-        }
-        
-        .timeline-dot {
-            position: relative;
-        }
-        
-        .timeline-dot::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
-        }
-        
-        .project-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-        
-        .nav-blur {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
+        .gradient-bg { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%); }
+        .text-gradient { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .skill-bar { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
+        .timeline-line { background: linear-gradient(180deg, #3b82f6, #8b5cf6); }
+        .nav-blur { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); }
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
 
-<body class="font-inter bg-gray-50 text-gray-900">
+<body class="font-inter bg-slate-900 text-white">
     
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 nav-blur transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-800">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-gradient">FMA</h1>
+                <div class="text-2xl font-bold text-gradient">FMA</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="hover:text-blue-400 transition">Inicio</a>
+                    <a href="#sobre-mi" class="hover:text-blue-400 transition">Sobre Mí</a>
+                    <a href="#proyectos" class="hover:text-blue-400 transition">Proyectos</a>
+                    <a href="#habilidades" class="hover:text-blue-400 transition">Habilidades</a>
+                    <a href="#experiencia" class="hover:text-blue-400 transition">Experiencia</a>
+                    <a href="#contacto" class="hover:text-blue-400 transition">Contacto</a>
                 </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#inicio" class="nav-link text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Inicio</a>
-                    <a href="#sobre-mi" class="nav-link text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Sobre Mí</a>
-                    <a href="#experiencia" class="nav-link text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Experiencia</a>
-                    <a href="#habilidades" class="nav-link text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Habilidades</a>
-                    <a href="#proyectos" class="nav-link text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Proyectos</a>
-                    <a href="#contacto" class="nav-link text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Contacto</a>
-                </div>
-                
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <button id="mobile-menu-btn" class="md:hidden">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="#inicio" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Inicio</a>
-                    <a href="#sobre-mi" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Sobre Mí</a>
-                    <a href="#experiencia" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Experiencia</a>
-                    <a href="#habilidades" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Habilidades</a>
-                    <a href="#proyectos" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Proyectos</a>
-                    <a href="#contacto" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Contacto</a>
-                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="inicio" class="min-h-screen flex items-center gradient-bg relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-20"></div>
-
-        <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-start">
-            <img src="./assets/img/star.svg" alt="Star" class="w-96 h-96 object-contain">
-        </div>
-        
-        <!-- Animated Background Elements -->
         <div class="absolute inset-0">
-            <div class="absolute top-20 left-10 w-20 h-20 bg-white opacity-10 rounded-full animate-float"></div>
-            <div class="absolute top-40 right-20 w-32 h-32 bg-white opacity-10 rounded-full animate-float" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-white opacity-10 rounded-full animate-float" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-40 right-1/3 w-24 h-24 bg-white opacity-10 rounded-full animate-float" style="animation-delay: 1.5s;"></div>
+            <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 opacity-10 rounded-full float-animation"></div>
+            <div class="absolute top-40 right-20 w-40 h-40 bg-purple-500 opacity-10 rounded-full float-animation" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-indigo-500 opacity-10 rounded-full float-animation" style="animation-delay: 2s;"></div>
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 text-white mb-10 md:mb-0 animate-slide-in-left">
-                    <h2 class="text-4xl md:text-6xl font-bold mb-4">
-                        ¡Hola! Soy <span class="text-yellow-300">Franco</span>
-                    </h2>
-                    <h3 class="text-2xl md:text-3xl font-light mb-6">
-                        Desarrollador Full Stack
-                    </h3>
-                    <p class="text-lg mb-8 text-gray-200">
-                        Apasionado por crear experiencias digitales excepcionales con 4 años de experiencia en desarrollo web, Android y aplicaciones de escritorio.
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        Franco <span class="text-gradient">Millanes</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">Full Stack Developer</h2>
+                    <p class="text-lg text-gray-400 mb-8 max-w-lg">
+                        Ingeniero informático especializado en crear soluciones web robustas con Node.js, Angular y PHP. 4 años transformando ideas en productos digitales.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#proyectos" class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 hover-lift">
-                            Ver Proyectos
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
+                            <i class="fab fa-github"></i> GitHub
                         </a>
-                        <a href="#contacto" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300 hover-lift">
-                            Contactar
+                        <a href="https://www.linkedin.com/in/Franco Alberto Millanes Araya" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
+                            <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
+                        <a href="mailto:francoding.dev@gmail.com" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                    <div class="flex gap-4">
+                        <button onclick="showCV()" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                            <i class="fas fa-eye mr-2"></i>Ver CV
+                        </button>
+                        <button onclick="downloadCV()" class="border border-gray-600 hover:border-gray-500 px-6 py-3 rounded-lg font-semibold transition">
+                            <i class="fas fa-download mr-2"></i>Descargar CV
+                        </button>
                     </div>
                 </div>
                 
-                <div class="md:w-1/2 flex justify-center animate-slide-in-right">
+                <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl pulse-animation">
-                            <img src="assets/img/avataaars.png" alt="Franco Millanes Araya" class="w-full h-full object-cover">
+                        <div class="w-80 h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl float-animation">
+                            <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-full h-full object-cover">
                         </div>
-                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold shadow-lg">
-                            Disponible
+                        <div class="absolute -bottom-4 -right-4 bg-green-500 text-gray-900 px-6 py-2 rounded-full font-bold">
+                            Disponible para proyectos
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-            <i class="fas fa-chevron-down text-2xl"></i>
-        </div>
-
-        
     </section>
 
-    <!-- About Section -->
-    <section id="sobre-mi" class="py-20 bg-white">
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 text-gradient">Sobre Mí</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Conoce más sobre mi trayectoria profesional y mi pasión por el desarrollo de software
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Ingeniero informático apasionado por el desarrollo de soluciones tecnológicas innovadoras
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-slide-in-left">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Mi Historia</h3>
-                    <p class="text-gray-600 mb-4">
-                        Soy un informático apasionado de Chile con una sólida trayectoria en el desarrollo de proyectos de programación web. Mi viaje en el mundo tecnológico me ha permitido dominar diversas tecnologías y crear soluciones innovadoras.
+                <div>
+                    <p class="text-gray-300 mb-6">
+                        Como desarrollador Full Stack con 4 años de experiencia, me especializo en crear aplicaciones web completas que combinan frontend moderno con backend robusto. Mi enfoque principal es Node.js, Angular y PHP, tecnologías que me permiten construir soluciones escalables y eficientes.
                     </p>
-                    <p class="text-gray-600 mb-4">
-                        Me especializo en el desarrollo Full Stack, combinando creatividad con habilidades técnicas para construir aplicaciones robustas y escalables que resuelven problemas reales.
+                    <p class="text-gray-300 mb-6">
+                        Mi experiencia en soporte técnico y administración de sistemas me da una perspectiva única del ciclo completo del desarrollo, desde la arquitectura hasta el despliegue y mantenimiento.
                     </p>
-                    <p class="text-gray-600">
-                        Cada proyecto es una oportunidad para aprender, crecer y superar límites. Me apasiona transformar ideas en realidad digital.
+                    <p class="text-gray-300">
+                        Me apasiona resolver problemas complejos y transformar ideas en productos digitales que generen valor real para usuarios y empresas.
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-2 gap-6 animate-slide-in-right">
-                    <div class="bg-gradient-to-br from-primary-500 to-primary-600 p-6 rounded-2xl text-white hover-lift">
-                        <i class="fas fa-code text-3xl mb-4"></i>
-                        <h4 class="font-bold mb-2">4+ Años</h4>
-                        <p class="text-sm">Experiencia en desarrollo</p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <i class="fas fa-code text-blue-400 text-3xl mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">20+ Proyectos</h3>
+                        <p class="text-gray-400">Completados exitosamente</p>
                     </div>
-                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-2xl text-white hover-lift">
-                        <i class="fas fa-project-diagram text-3xl mb-4"></i>
-                        <h4 class="font-bold mb-2">20+ Proyectos</h4>
-                        <p class="text-sm">Completados exitosamente</p>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <i class="fas fa-users text-purple-400 text-3xl mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">15+ Clientes</h3>
+                        <p class="text-gray-400">Satisfechos con mi trabajo</p>
                     </div>
-                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 p-6 rounded-2xl text-white hover-lift">
-                        <i class="fas fa-users text-3xl mb-4"></i>
-                        <h4 class="font-bold mb-2">15+ Clientes</h4>
-                        <p class="text-sm">Satisfechos con mi trabajo</p>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <i class="fas fa-clock text-green-400 text-3xl mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">4+ Años</h3>
+                        <p class="text-gray-400">Experiencia profesional</p>
                     </div>
-                    <div class="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-2xl text-white hover-lift">
-                        <i class="fas fa-award text-3xl mb-4"></i>
-                        <h4 class="font-bold mb-2">Experto</h4>
-                        <p class="text-sm">En tecnologías modernas</p>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <i class="fas fa-award text-yellow-400 text-3xl mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">Full Stack</h3>
+                        <p class="text-gray-400">Desarrollo completo</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experiencia" class="py-20 bg-gray-50">
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-20 bg-slate-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Experiencia Laboral</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Mi trayectoria profesional en el mundo de la tecnología
+                <h2 class="text-4xl font-bold mb-4 text-gradient">Proyectos Destacados</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Los proyectos más completos y desafiantes que he desarrollado
                 </p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="relative">
-                    <!-- Timeline Line -->
-                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary-500 to-purple-600"></div>
-                    
-                    <!-- Experience Items -->
-                    <div class="space-y-12">
-                        <div class="flex items-center justify-between">
-                            <div class="w-5/12 text-right animate-slide-in-left">
-                                <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
-                                    <h3 class="text-xl font-bold text-gray-900">Ingeniero de Soporte TI</h3>
-                                    <h4 class="text-primary-600 font-semibold mb-2">TIBOX</h4>
-                                    <p class="text-gray-600 text-sm mb-2">May 2024 - Presente</p>
-                                    <p class="text-gray-600">Soporte técnico especializado y administración de sistemas.</p>
-                                </div>
-                            </div>
-                            <div class="w-2/12 flex justify-center">
-                                <div class="timeline-dot w-4 h-4 bg-white border-4 border-primary-500 rounded-full"></div>
-                            </div>
-                            <div class="w-5/12"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- InformaDev -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">InformaDev</h3>
+                        <p class="text-gray-400 mb-4">Plataforma educativa para gestión de tareas, horarios y asignaturas. Alternativa moderna a Notion.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">AngularJS</span>
+                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">MySQL</span>
                         </div>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="w-5/12"></div>
-                            <div class="w-2/12 flex justify-center">
-                                <div class="timeline-dot w-4 h-4 bg-white border-4 border-purple-500 rounded-full"></div>
-                            </div>
-                            <div class="w-5/12 animate-slide-in-right">
-                                <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
-                                    <h3 class="text-xl font-bold text-gray-900">Asistente de Informática</h3>
-                                    <h4 class="text-purple-600 font-semibold mb-2">APFRUT</h4>
-                                    <p class="text-gray-600 text-sm mb-2">Nov 2022 - Dic 2022</p>
-                                    <p class="text-gray-600">Soporte técnico y mantenimiento de sistemas informáticos.</p>
-                                </div>
-                            </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('informadev')">
+                                Ver detalles →
+                            </button>
+                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
+                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            </a>
                         </div>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="w-5/12 text-right animate-slide-in-left">
-                                <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
-                                    <h3 class="text-xl font-bold text-gray-900">Secretario Administrativo</h3>
-                                    <h4 class="text-green-600 font-semibold mb-2">SOC. TEL. NOVAVISIÓN SPA</h4>
-                                    <p class="text-gray-600 text-sm mb-2">Ene 2018 - Feb 2023</p>
-                                    <p class="text-gray-600">Gestión administrativa y soporte técnico integral.</p>
-                                </div>
-                            </div>
-                            <div class="w-2/12 flex justify-center">
-                                <div class="timeline-dot w-4 h-4 bg-white border-4 border-green-500 rounded-full"></div>
-                            </div>
-                            <div class="w-5/12"></div>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <i class="fas fa-cogs text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Servicios Web</h3>
+                        <p class="text-gray-400 mb-4">Sistema de gestión de servicios empresariales con backend robusto y frontend moderno.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Express</span>
+                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">REST API</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Franko2015/Servicios" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('servicios')">
+                                Ver detalles →
+                            </button>
+                            <a href="https://github.com/Franko2015/Servicios" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
+                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SistemaPOS -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-cash-register text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Sistema POS</h3>
+                        <p class="text-gray-400 mb-4">Sistema completo de punto de venta con gestión de inventario y procesamiento de pagos.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-red-900 text-red-300 px-2 py-1 rounded text-xs">SQL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('sistema-pos')">
+                                Ver detalles →
+                            </button>
+                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
+                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LibroDeApuntes -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
+                        <i class="fas fa-book text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Libro de Apuntes</h3>
+                        <p class="text-gray-400 mb-4">Sistema de gestión de libros y apuntes educativos desarrollado con PHP puro y MySQL.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">PHP</span>
+                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">MySQL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Franko2015/LibroDeApuntes-php" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('libro-apuntes')">
+                                Ver detalles →
+                            </button>
+                            <a href="https://github.com/Franko2015/LibroDeApuntes-php" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
+                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API-Proyectos -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-server text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">API Proyectos</h3>
+                        <p class="text-gray-400 mb-4">API RESTful robusta para gestión de proyectos con Node.js y Express.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Express</span>
+                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">REST API</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Franko2015/API-PROYECTOS" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('api-proyectos')">
+                                Ver detalles →
+                            </button>
+                            <a href="https://github.com/Franko2015/API-PROYECTOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
+                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TODO-PHP -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-tasks text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">TODO App PHP</h3>
+                        <p class="text-gray-400 mb-4">Aplicación de gestión de tareas desarrollada con PHP puro y MySQL.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">PHP</span>
+                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">MySQL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Franko2015/TODO-php" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('todo-php')">
+                                Ver detalles →
+                            </button>
+                            <a href="https://github.com/Franko2015/TODO-php" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
+                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -388,400 +324,554 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="habilidades" class="py-20 bg-white">
+    <!-- Habilidades -->
+    <section id="habilidades" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 text-gradient">Habilidades Técnicas</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
+                <p class="text-gray-400 max-w-2xl mx-auto">
                     Tecnologías y competencias que domino profesionalmente
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Desarrollo Web</h3>
-                    <div class="space-y-6">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">HTML/CSS/JavaScript</span>
-                                <span class="text-primary-600">90%</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">Frontend</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>HTML/CSS/JavaScript</span>
+                                <span class="text-blue-400">90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">AngularJS/Angular</span>
-                                <span class="text-primary-600">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">Node.js/Express</span>
-                                <span class="text-primary-600">80%</span>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>AngularJS/Angular</span>
+                                <span class="text-blue-400">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 80%"></div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">PHP/MySQL</span>
-                                <span class="text-primary-600">85%</span>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>React/Vue.js</span>
+                                <span class="text-blue-400">75%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Soporte Técnico & Sistemas</h3>
-                    <div class="space-y-6">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">Administración de Sistemas</span>
-                                <span class="text-purple-600">88%</span>
+
+                <!-- Backend -->
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-4 text-green-400">Backend</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Node.js/Express</span>
+                                <span class="text-green-400">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">Soporte Técnico Nivel 2</span>
-                                <span class="text-purple-600">92%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 92%"></div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">Bases de Datos (SQL)</span>
-                                <span class="text-purple-600">75%</span>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>PHP</span>
+                                <span class="text-green-400">80%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 75%"></div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-gray-700">Seguridad Informática</span>
-                                <span class="text-purple-600">70%</span>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Python</span>
+                                <span class="text-green-400">70%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="skill-progress h-3 rounded-full" style="width: 70%"></div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database & DevOps -->
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Database & DevOps</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>MySQL/PostgreSQL</span>
+                                <span class="text-purple-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>MongoDB</span>
+                                <span class="text-purple-400">75%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Git/Docker</span>
+                                <span class="text-purple-400">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Soft Skills -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-bold mb-6 text-center text-gray-900">Habilidades Blandas</h3>
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">Habilidades Blandas</h3>
                 <div class="flex flex-wrap justify-center gap-3">
-                    <span class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Comunicación Efectiva</span>
-                    <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Trabajo en Equipo</span>
-                    <span class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Resolución de Problemas</span>
-                    <span class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Atención al Cliente</span>
-                    <span class="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Gestión del Tiempo</span>
-                    <span class="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Adaptabilidad</span>
-                    <span class="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Liderazgo</span>
-                    <span class="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-4 py-2 rounded-full text-sm font-medium hover-lift">Creatividad</span>
+                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Comunicación Efectiva</span>
+                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Trabajo en Equipo</span>
+                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Resolución de Problemas</span>
+                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Liderazgo</span>
+                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Adaptabilidad</span>
+                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Creatividad</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="proyectos" class="py-20 bg-gray-50">
+    <!-- Experiencia -->
+    <section id="experiencia" class="py-20 bg-slate-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Proyectos Destacados</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Algunos de mis proyectos más recientes y desafiantes
+                <h2 class="text-4xl font-bold mb-4 text-gradient">Experiencia Laboral</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Mi trayectoria profesional en el mundo tecnológico
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- InformaDev Project -->
-                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">InformaDev</h3>
-                        <p class="text-gray-600 mb-4">Plataforma educativa para estudiantes con gestión de tareas, horarios y asignaturas.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">AngularJS</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">MySQL</span>
+            <div class="max-w-4xl mx-auto">
+                <!-- Desktop Timeline -->
+                <div class="relative hidden md:block">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 timeline-line"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- Experience 1 -->
+                        <div class="flex items-center">
+                            <div class="w-5/12 text-right pr-8">
+                                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="text-xl font-bold">Ingeniero de Soporte TI</h3>
+                                        <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Actual</span>
+                                    </div>
+                                    <h4 class="text-blue-400 mb-2 flex items-center justify-end">
+                                        <i class="fas fa-building mr-2"></i>TIBOX
+                                    </h4>
+                                    <p class="text-gray-400 text-sm mb-3 flex items-center justify-end">
+                                        <i class="fas fa-calendar mr-2"></i>May 2024 - Presente
+                                    </p>
+                                    <p class="text-gray-300">Soporte técnico especializado y administración de sistemas.</p>
+                                </div>
+                            </div>
+                            <div class="w-2/12 flex justify-center">
+                                <div class="w-4 h-4 bg-blue-500 rounded-full ring-4 ring-slate-900"></div>
+                            </div>
+                            <div class="w-5/12"></div>
                         </div>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="text-gray-700 hover:text-primary-600 transition-colors">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
-                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm" onclick="showProjectDetails('informadev')">
-                                Ver más →
-                            </button>
+                        
+                        <!-- Experience 2 -->
+                        <div class="flex items-center">
+                            <div class="w-5/12"></div>
+                            <div class="w-2/12 flex justify-center">
+                                <div class="w-4 h-4 bg-purple-500 rounded-full ring-4 ring-slate-900"></div>
+                            </div>
+                            <div class="w-5/12 pl-8">
+                                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="text-xl font-bold">Asistente de Informática</h3>
+                                    </div>
+                                    <h4 class="text-purple-400 mb-2 flex items-center">
+                                        <i class="fas fa-building mr-2"></i>APFRUT
+                                    </h4>
+                                    <p class="text-gray-400 text-sm mb-3 flex items-center">
+                                        <i class="fas fa-calendar mr-2"></i>Nov 2022 - Dic 2022
+                                    </p>
+                                    <p class="text-gray-300">Soporte técnico y mantenimiento de sistemas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 3 -->
+                        <div class="flex items-center">
+                            <div class="w-5/12 text-right pr-8">
+                                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-green-500 transition-all duration-300">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="text-xl font-bold">Secretario Administrativo</h3>
+                                    </div>
+                                    <h4 class="text-green-400 mb-2 flex items-center justify-end">
+                                        <i class="fas fa-building mr-2"></i>SOC. TEL. NOVAVISIÓN SPA
+                                    </h4>
+                                    <p class="text-gray-400 text-sm mb-3 flex items-center justify-end">
+                                        <i class="fas fa-calendar mr-2"></i>Ene 2018 - Feb 2023
+                                    </p>
+                                    <p class="text-gray-300">Gestión administrativa y soporte técnico integral.</p>
+                                </div>
+                            </div>
+                            <div class="w-2/12 flex justify-center">
+                                <div class="w-4 h-4 bg-green-500 rounded-full ring-4 ring-slate-900"></div>
+                            </div>
+                            <div class="w-5/12"></div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Sistema POS Project -->
-                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-cash-register text-white text-4xl"></i>
+
+                <!-- Mobile Cards -->
+                <div class="md:hidden space-y-6">
+                    <!-- Experience 1 -->
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold">Ingeniero de Soporte TI</h3>
+                            <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Actual</span>
+                        </div>
+                        <h4 class="text-blue-400 mb-2 flex items-center">
+                            <i class="fas fa-briefcase mr-2"></i>TIBOX
+                        </h4>
+                        <p class="text-gray-400 text-sm mb-3 flex items-center">
+                            <i class="fas fa-clock mr-2"></i>May 2024 - Presente
+                        </p>
+                        <p class="text-gray-300">Soporte técnico especializado y administración de sistemas.</p>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">Sistema POS</h3>
-                        <p class="text-gray-600 mb-4">Sistema completo de punto de venta con gestión de inventario y procesamiento de pagos.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">JavaScript</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">SQL</span>
+
+                    <!-- Experience 2 -->
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold">Asistente de Informática</h3>
                         </div>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="text-gray-700 hover:text-primary-600 transition-colors">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
-                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm" onclick="showProjectDetails('sistema-pos')">
-                                Ver más →
-                            </button>
-                        </div>
+                        <h4 class="text-purple-400 mb-2 flex items-center">
+                            <i class="fas fa-briefcase mr-2"></i>APFRUT
+                        </h4>
+                        <p class="text-gray-400 text-sm mb-3 flex items-center">
+                            <i class="fas fa-clock mr-2"></i>Nov 2022 - Dic 2022
+                        </p>
+                        <p class="text-gray-300">Soporte técnico y mantenimiento de sistemas.</p>
                     </div>
-                </div>
-                
-                <!-- InvestiCorp Project -->
-                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">InvestiCorp</h3>
-                        <p class="text-gray-600 mb-4">Plataforma de inversión con backend robusto para gestión de portafolios y análisis.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Node.js</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Express</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">JWT</span>
+
+                    <!-- Experience 3 -->
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold">Secretario Administrativo</h3>
                         </div>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Franko2015/investicorp" target="_blank" class="text-gray-700 hover:text-primary-600 transition-colors">
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
-                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm" onclick="showProjectDetails('investicorp')">
-                                Ver más →
-                            </button>
-                        </div>
+                        <h4 class="text-green-400 mb-2 flex items-center">
+                            <i class="fas fa-briefcase mr-2"></i>SOC. TEL. NOVAVISIÓN SPA
+                        </h4>
+                        <p class="text-gray-400 text-sm mb-3 flex items-center">
+                            <i class="fas fa-clock mr-2"></i>Ene 2018 - Feb 2023
+                        </p>
+                        <p class="text-gray-300">Gestión administrativa y soporte técnico integral.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="py-20 bg-white">
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 text-gradient">Contacto</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
+                <p class="text-gray-400 max-w-2xl mx-auto">
                     ¿Listo para trabajar juntos? Ponte en contacto y hagamos algo increíble
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="text-center hover-lift">
-                    <div class="bg-gradient-to-br from-primary-500 to-primary-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone text-white text-xl"></i>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Nombre" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <textarea placeholder="Mensaje" rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-3 rounded-lg font-semibold transition">
+                                Enviar Mensaje
+                            </button>
+                        </form>
                     </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Teléfono</h3>
-                    <p class="text-gray-600 mb-2">+56954849143</p>
-                    <button onclick="copyToClipboard('+56954849143', 'teléfono')" class="text-primary-600 hover:text-primary-700 text-sm font-medium">
-                        Copiar número
-                    </button>
-                </div>
-                
-                <div class="text-center hover-lift">
-                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope text-white text-xl"></i>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                            <h3 class="font-bold mb-4 text-blue-400">Información Directa</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-gray-400"></i>
+                                    <span>francoding.dev@gmail.com</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-phone text-gray-400"></i>
+                                    <span>+56954849143</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-map-marker-alt text-gray-400"></i>
+                                    <span>Curicó, Chile</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                            <h3 class="font-bold mb-4 text-purple-400">Redes Sociales</h3>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/Franco Alberto Millanes Araya" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://wa.me/56954849143" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Email</h3>
-                    <p class="text-gray-600 mb-2">francoding.dev@gmail.com</p>
-                    <button onclick="copyToClipboard('francoding.dev@gmail.com', 'email')" class="text-primary-600 hover:text-primary-700 text-sm font-medium">
-                        Copiar email
-                    </button>
-                </div>
-                
-                <div class="text-center hover-lift">
-                    <div class="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fab fa-whatsapp text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">WhatsApp</h3>
-                    <p class="text-gray-600 mb-2">+56954849143</p>
-                    <a href="https://wa.me/56954849143?text=Hola%20Franco,%20he%20visto%20tu%20portafolio%20y%20me%20interesa%20tu%20trabajo" target="_blank" class="text-primary-600 hover:text-primary-700 text-sm font-medium">
-                        Enviar mensaje
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Social Links -->
-            <div class="text-center mt-16">
-                <h3 class="text-xl font-bold mb-4 text-gray-900">Sígueme en</h3>
-                <div class="flex justify-center gap-4">
-                    <a href="https://github.com/Franko2015" target="_blank" class="bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/Franco Alberto Millanes Araya" target="_blank" class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100080322574681" target="_blank" class="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
+    <footer class="py-8 bg-slate-950 border-t border-slate-800">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p>&copy; 2024 Franco Millanes Araya. Todos los derechos reservados.</p>
-                </div>
-                <div class="text-center md:text-right">
-                    <p class="text-sm text-gray-400">Hecho con ❤️ y mucho café</p>
-                    <p class="text-sm text-gray-400">Curicó, Chile</p>
-                </div>
+            <div class="text-center">
+                <p class="text-gray-400">&copy; 2024 Franco Millanes Araya. Todos los derechos reservados.</p>
+                <p class="text-gray-500 text-sm mt-2">Hecho con ❤️ y mucho café en Chile</p>
             </div>
         </div>
     </footer>
 
-    <!-- Project Details Modal -->
-    <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <!-- Modal CV -->
+    <div id="cv-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 id="modalTitle" class="text-2xl font-bold text-gray-900"></h3>
-                    <button onclick="closeProjectModal()" class="text-gray-500 hover:text-gray-700">
+                    <h3 class="text-2xl font-bold">Mi Curriculum Vitae</h3>
+                    <button onclick="closeCV()" class="text-gray-400 hover:text-white">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                 </div>
-                <div id="modalContent"></div>
+                <div class="bg-slate-900 p-8 rounded-lg">
+                    <div class="text-center mb-8">
+                        <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h1 class="text-3xl font-bold mb-2">Franco Millanes Araya</h1>
+                        <p class="text-gray-400">Ingeniero Informático | Full Stack Developer</p>
+                    </div>
+                    
+                    <div class="space-y-6 text-gray-300">
+                        <div>
+                            <h2 class="text-xl font-bold mb-3 text-blue-400">Resumen Profesional</h2>
+                            <p>Ingeniero informático con 4 años de experiencia en desarrollo de software full stack. Especializado en crear aplicaciones web robustas con Node.js, Angular y PHP. Apasionado por resolver problemas complejos y transformar ideas en productos digitales exitosos.</p>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-xl font-bold mb-3 text-green-400">Experiencia Laboral</h2>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h3 class="font-bold">Ingeniero de Soporte TI</h3>
+                                    <p class="text-gray-400">TIBOX | May 2024 - Presente</p>
+                                    <p>Soporte técnico especializado y administración de sistemas.</p>
+                                </div>
+                                <div class="border-l-4 border-purple-500 pl-4">
+                                    <h3 class="font-bold">Asistente de Informática</h3>
+                                    <p class="text-gray-400">APFRUT | Nov 2022 - Dic 2022</p>
+                                    <p>Soporte técnico y mantenimiento de sistemas informáticos.</p>
+                                </div>
+                                <div class="border-l-4 border-green-500 pl-4">
+                                    <h3 class="font-bold">Secretario Administrativo</h3>
+                                    <p class="text-gray-400">SOC. TEL. NOVAVISIÓN SPA | Ene 2018 - Feb 2023</p>
+                                    <p>Gestión administrativa y soporte técnico integral.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-xl font-bold mb-3 text-purple-400">Habilidades Técnicas</h2>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <h3 class="font-bold mb-2">Frontend</h3>
+                                    <p>HTML, CSS, JavaScript, AngularJS, Angular, React, Vue.js</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-2">Backend</h3>
+                                    <p>Node.js, Express, PHP, Python, Java</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-2">Base de Datos</h3>
+                                    <p>MySQL, PostgreSQL, MongoDB, SQL Server</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-2">Herramientas</h3>
+                                    <p>Git, Docker, AWS, Firebase, REST APIs</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-xl font-bold mb-3 text-yellow-400">Educación</h2>
+                            <p class="border-l-4 border-yellow-500 pl-4">
+                                <strong>Ingeniería en Informática</strong><br>
+                                INACAP<br>
+                                <strong>Analista Programador</strong><br>
+                                INACAP
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-xl font-bold mb-3 text-red-400">Contacto</h2>
+                            <p>📧 francoding.dev@gmail.com<br>
+                            📱 +56954849143<br>
+                            📍 Curicó, Chile<br>
+                            🔗 github.com/Franko2015</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Notification Toast -->
-    <div id="notification" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hidden z-50 animate-slide-up">
-        <div class="flex items-center gap-2">
-            <i class="fas fa-check-circle"></i>
-            <span id="notificationText"></span>
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="project-title" class="text-2xl font-bold"></h3>
+                    <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div id="project-content"></div>
+            </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-900 bg-opacity-95 z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Inicio</a>
+            <a href="#sobre-mi" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Sobre Mí</a>
+            <a href="#proyectos" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Proyectos</a>
+            <a href="#habilidades" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Habilidades</a>
+            <a href="#experiencia" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Experiencia</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Contacto</a>
+        </div>
+    </div>
 
-        // Smooth Scrolling
+    <script>
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
-            }
-        });
+        // CV Modal
+        function showCV() {
+            document.getElementById('cv-modal').classList.remove('hidden');
+        }
 
-        // Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        function closeCV() {
+            document.getElementById('cv-modal').classList.add('hidden');
+        }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
+        function downloadCV() {
+            // Create and download PDF
+            const link = document.createElement('a');
+            link.href = '#'; // Replace with actual CV file
+            link.download = 'Franco_Millanes_CV.pdf';
+            link.click();
+        }
 
-        // Observe elements for animation
-        document.querySelectorAll('.skill-item, .project-card, .hover-lift').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Project Details Modal
+        // Project Modal
         const projectDetails = {
             'informadev': {
-                title: 'InformaDev - Plataforma Estudiantil',
+                title: 'InformaDev - Plataforma Educativa',
                 content: `
                     <div class="space-y-4">
-                        <img src="https://via.placeholder.com/600x400/2E86AB/FFFFFF?text=InformaDev" alt="InformaDev" class="w-full rounded-lg">
-                        <p class="text-gray-600">Plataforma educativa completa para estudiantes que permite organizar tareas, horarios y obtener información sobre asignaturas. Diseñada como una alternativa superior a Notion con mejor experiencia de usuario y mayor productividad.</p>
+                        <p class="text-gray-300">Plataforma educativa completa para estudiantes que permite organizar tareas, horarios y obtener información sobre asignaturas. Diseñada como una alternativa superior a Notion con mejor experiencia de usuario.</p>
                         <div>
-                            <h4 class="font-bold mb-2">Características principales:</h4>
-                            <ul class="list-disc list-inside text-gray-600 space-y-1">
-                                <li>Gestión de tareas con fechas límite y prioridades</li>
+                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Gestión de tareas con fechas límite</li>
                                 <li>Horarios personalizados con notificaciones</li>
                                 <li>Información detallada de asignaturas</li>
-                                <li>Interfaz intuitiva y moderna</li>
                                 <li>Sistema de autenticación JWT</li>
+                                <li>Interfaz moderna y responsiva</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2">Tecnologías utilizadas:</h4>
+                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">AngularJS</span>
-                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
-                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Express.js</span>
-                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MySQL</span>
-                                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">JWT</span>
-                                <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">mysql2/promise</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">AngularJS</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Express.js</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">MySQL</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JWT</span>
                             </div>
                         </div>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
-                                <i class="fab fa-github mr-2"></i>Ver en GitHub
-                            </a>
+                    </div>
+                `
+            },
+            'servicios': {
+                title: 'Servicios Web - Sistema Empresarial',
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-gray-300">Sistema completo de gestión de servicios empresariales con backend robusto y frontend moderno. Diseñado para optimizar procesos de negocio y mejorar la eficiencia operativa.</p>
+                        <div>
+                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Gestión completa de servicios y clientes</li>
+                                <li>Sistema de agendamiento y seguimiento</li>
+                                <li>Panel administrativo intuitivo</li>
+                                <li>API RESTful para integraciones</li>
+                                <li>Sistema de notificaciones automáticas</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Express</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">REST API</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Base de Datos</span>
+                            </div>
                         </div>
                     </div>
                 `
@@ -790,11 +880,10 @@
                 title: 'Sistema POS - Point of Sale',
                 content: `
                     <div class="space-y-4">
-                        <img src="https://via.placeholder.com/600x400/A23B72/FFFFFF?text=Sistema+POS" alt="Sistema POS" class="w-full rounded-lg">
-                        <p class="text-gray-600">Sistema completo de punto de venta diseñado para gestión comercial. Incluye control de inventario, gestión de productos, procesamiento de ventas y generación de reportes en tiempo real.</p>
+                        <p class="text-gray-300">Sistema completo de punto de venta diseñado para gestión comercial. Incluye control de inventario, gestión de productos y procesamiento de ventas.</p>
                         <div>
-                            <h4 class="font-bold mb-2">Características principales:</h4>
-                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
                                 <li>Gestión completa de inventario</li>
                                 <li>Procesamiento de pagos múltiples métodos</li>
                                 <li>Control de productos y categorías</li>
@@ -803,56 +892,94 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2">Tecnologías utilizadas:</h4>
+                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
-                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">CSS</span>
-                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">JavaScript</span>
-                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Node.js</span>
-                                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">SQL</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">SQL</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HTML/CSS</span>
                             </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
-                                <i class="fab fa-github mr-2"></i>Ver en GitHub
-                            </a>
                         </div>
                     </div>
                 `
             },
-            'investicorp': {
-                title: 'InvestiCorp - Plataforma de Inversión',
+            'libro-apuntes': {
+                title: 'Libro de Apuntes - Sistema Educativo',
                 content: `
                     <div class="space-y-4">
-                        <img src="https://via.placeholder.com/600x400/F18F01/FFFFFF?text=InvestiCorp" alt="InvestiCorp" class="w-full rounded-lg">
-                        <p class="text-gray-600">Plataforma de inversión con backend robusto para gestión de portafolios, análisis de mercado y ejecución de operaciones financieras. Incluye frontend y backend separados para máxima escalabilidad.</p>
+                        <p class="text-gray-300">Sistema de gestión de libros y apuntes educativos desarrollado con PHP puro y MySQL para instituciones educativas.</p>
                         <div>
-                            <h4 class="font-bold mb-2">Características principales:</h4>
-                            <ul class="list-disc list-inside text-gray-600 space-y-1">
-                                <li>Gestión de portafolios de inversión</li>
-                                <li>Análisis de mercado en tiempo real</li>
-                                <li>Ejecución de operaciones financieras</li>
-                                <li>Dashboard interactivo con gráficos</li>
-                                <li>Sistema de autenticación seguro</li>
+                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Gestión de libros y apuntes</li>
+                                <li>Categorización por materias</li>
+                                <li>Búsqueda avanzada de contenido</li>
+                                <li>Interfaz administrativa</li>
+                                <li>Base de datos centralizada</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2">Tecnologías utilizadas:</h4>
+                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
-                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Express</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">API RESTful</span>
-                                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Base de Datos</span>
-                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">JWT</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">MySQL</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">CSS</span>
                             </div>
                         </div>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Franko2015/investicorp" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
-                                <i class="fab fa-github mr-2"></i>Frontend
-                            </a>
-                            <a href="https://github.com/Franko2015/investicorp-back-endd" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
-                                <i class="fab fa-github mr-2"></i>Backend
-                            </a>
+                    </div>
+                `
+            },
+            'api-proyectos': {
+                title: 'API Proyectos - REST API',
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-gray-300">API RESTful robusta para gestión de proyectos con Node.js y Express. Diseñada para ser escalable y fácil de consumir.</p>
+                        <div>
+                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Endpoints RESTful completos</li>
+                                <li>Autenticación y autorización</li>
+                                <li>Validación de datos</li>
+                                <li>Manejo de errores</li>
+                                <li>Documentación API</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Express</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">REST API</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JSON</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'todo-php': {
+                title: 'TODO App PHP - Gestor de Tareas',
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-gray-300">Aplicación de gestión de tareas desarrollada con PHP puro y MySQL. Proyecto práctico para demostrar habilidades en desarrollo backend.</p>
+                        <div>
+                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Crear, editar y eliminar tareas</li>
+                                <li>Marcar tareas como completadas</li>
+                                <li>Filtrado por estado</li>
+                                <li>Interfaz simple y funcional</li>
+                                <li>Persistencia en base de datos</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">PHP</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">MySQL</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HTML</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">CSS</span>
+                            </div>
                         </div>
                     </div>
                 `
@@ -860,98 +987,43 @@
         };
 
         function showProjectDetails(projectId) {
-            const modal = document.getElementById('projectModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalContent = document.getElementById('modalContent');
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('project-title');
+            const content = document.getElementById('project-content');
             
             const project = projectDetails[projectId];
             if (project) {
-                modalTitle.textContent = project.title;
-                modalContent.innerHTML = project.content;
+                title.textContent = project.title;
+                content.innerHTML = project.content;
                 modal.classList.remove('hidden');
             }
         }
 
         function closeProjectModal() {
-            const modal = document.getElementById('projectModal');
-            modal.classList.add('hidden');
+            document.getElementById('project-modal').classList.add('hidden');
         }
 
-        // Copy to Clipboard Function
-        function copyToClipboard(text, type) {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text).then(() => {
-                    showNotification(`${type} copiado al portapapeles`);
-                }).catch(err => {
-                    fallbackCopy(text, type);
-                });
-            } else {
-                fallbackCopy(text, type);
-            }
-        }
-
-        function fallbackCopy(text, type) {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed';
-            textArea.style.left = '-999999px';
-            textArea.style.top = '-999999px';
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                showNotification(`${type} copiado al portapapeles`);
-            } catch (err) {
-                showNotification('No se pudo copiar el texto', 'error');
-            }
-            
-            document.body.removeChild(textArea);
-        }
-
-        function showNotification(message, type = 'success') {
-            const notification = document.getElementById('notification');
-            const notificationText = document.getElementById('notificationText');
-            
-            notificationText.textContent = message;
-            notification.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-up ${
-                type === 'success' ? 'bg-green-500' : 'bg-red-500'
-            } text-white`;
-            
-            notification.classList.remove('hidden');
-            
-            setTimeout(() => {
-                notification.classList.add('hidden');
-            }, 3000);
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('projectModal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
-                closeProjectModal();
-            }
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Implement form submission
+            alert('Formulario enviado correctamente');
         });
 
-        // Add active nav state on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = '#' + section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('text-primary-600');
-                        if (link.getAttribute('href') === sectionId) {
-                            link.classList.add('text-primary-600');
-                        }
-                    });
-                }
-            });
+        // Close modals on outside click
+        document.getElementById('cv-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeCV();
+        });
+
+        document.getElementById('project-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeProjectModal();
+        });
+
+        // Close mobile menu when clicking outside
+        document.getElementById('mobile-menu').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                toggleMobileMenu();
+            }
         });
     </script>
 </body>
