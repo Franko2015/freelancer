@@ -602,16 +602,19 @@
                     <div>
                         <form id="contact-form" class="space-y-4">
                             <div>
-                                <input type="text" placeholder="Nombre" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                <input type="text" id="form-name" placeholder="Nombre *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
                             </div>
                             <div>
-                                <input type="email" placeholder="Email" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                <input type="email" id="form-email" placeholder="Email *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
                             </div>
                             <div>
-                                <textarea placeholder="Mensaje" rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"></textarea>
+                                <input type="text" id="form-company" placeholder="Empresa (opcional)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
                             </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-3 rounded-lg font-semibold transition">
-                                Enviar Mensaje
+                            <div>
+                                <textarea id="form-message" placeholder="Mensaje *" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-3 rounded-lg font-semibold transition flex items-center justify-center">
+                                <i class="fab fa-whatsapp mr-2"></i>Enviar por WhatsApp
                             </button>
                         </form>
                     </div>
@@ -641,7 +644,7 @@
                                 <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/Franco Alberto Millanes Araya" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
+                                <a href="https://www.linkedin.com/in/franco-alberto-m/" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                                 <a href="https://wa.me/56954849143" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
@@ -1004,11 +1007,78 @@
         }
 
         // Contact form
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Implement form submission
-            alert('Formulario enviado correctamente');
+            
+            // Get form values
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const company = document.getElementById('form-company').value;
+            const message = document.getElementById('form-message').value;
+            
+            // Validate required fields
+            if (!name || !email || !message) {
+                showNotification('Por favor, completa los campos obligatorios (*)', 'error');
+                return;
+            }
+            
+            // Create WhatsApp message
+            const whatsappMessage = encodeURIComponent(
+                `🚀 *NUEVO CONTACTO DESDE PORTAFOLIO* 🚀\n\n` +
+                `👤 *Nombre:* ${name}\n` +
+                `📧 *Email:* ${email}\n` +
+                `${company ? `🏢 *Empresa:* ${company}\n` : ''}` +
+                `💬 *Mensaje:* ${message}\n\n` +
+                `📅 *Fecha:* ${new Date().toLocaleDateString('es-CL')}\n` +
+                `⏰ *Hora:* ${new Date().toLocaleTimeString('es-CL')}\n\n` +
+                `---\n` +
+                `🌟 *Enviado desde el portafolio de Franco Millanes Araya*`
+            );
+            
+            // Open WhatsApp with pre-filled message
+            const whatsappLink = `https://wa.me/56954849143?text=${whatsappMessage}`;
+            window.open(whatsappLink, '_blank');
+            
+            // Show success message
+            showNotification('Abriendo WhatsApp...', 'success');
+            
+            // Reset form
+            this.reset();
         });
+
+        // Notification function
+        function showNotification(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-6 px-6 py-4 rounded-lg text-white font-medium z-50 transform translate-x-full transition-transform duration-300`;
+            
+            // Set color based on type
+            if (type === 'success') {
+                notification.classList.add('bg-green-600');
+            } else if (type === 'error') {
+                notification.classList.add('bg-red-600');
+            }
+            
+            notification.textContent = message;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+                notification.classList.add('translate-x-0');
+            }, 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('translate-x-0');
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
 
         // Close modals on outside click
         document.getElementById('cv-modal').addEventListener('click', (e) => {
