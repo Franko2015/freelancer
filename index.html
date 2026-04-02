@@ -23,6 +23,44 @@
         .nav-blur { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); }
         .float-animation { animation: float 3s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; line-height: 1.2; }
+            .hero-subtitle { font-size: 1.25rem; }
+            .section-title { font-size: 2rem; }
+            .mobile-menu-overlay { background: rgba(15, 23, 42, 0.98); }
+            .mobile-image { width: 200px !important; height: 200px !important; }
+            .mobile-badge { font-size: 0.75rem; padding: 0.25rem 0.75rem; }
+            .project-card { margin-bottom: 1rem; }
+            .skill-card { margin-bottom: 1rem; }
+            .contact-form { padding: 1rem; }
+            .modal-content { margin: 1rem; max-height: 85vh; }
+            .container { padding-left: 1rem; padding-right: 1rem; }
+            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+            .px-6 { padding-left: 1rem; padding-right: 1rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.125rem; }
+            .section-title { font-size: 1.75rem; }
+            .mobile-image { width: 150px !important; height: 150px !important; }
+            .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+            .mobile-badge { font-size: 0.625rem; padding: 0.25rem 0.5rem; }
+            .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
+        }
+        
+        /* Modal optimizations */
+        @media (max-width: 640px) {
+            .modal-content { 
+                margin: 0.5rem; 
+                max-height: 90vh; 
+                border-radius: 0.5rem;
+            }
+            .modal-content .p-6 { padding: 1rem; }
+            .modal-content .p-8 { padding: 1.5rem; }
+        }
     </style>
 </head>
 
@@ -41,7 +79,7 @@
                     <a href="#experiencia" class="hover:text-blue-400 transition">Experiencia</a>
                     <a href="#contacto" class="hover:text-blue-400 transition">Contacto</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden">
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-800 transition">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
@@ -58,30 +96,30 @@
         
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                    <h1 class="hero-title text-5xl md:text-7xl font-bold mb-6">
                         Franco <span class="text-gradient">Millanes</span>
                     </h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">Full Stack Developer</h2>
-                    <p class="text-lg text-gray-400 mb-8 max-w-lg">
+                    <h2 class="hero-subtitle text-2xl md:text-3xl text-gray-300 mb-6">Full Stack Developer</h2>
+                    <p class="text-lg text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
                         Ingeniero informático especializado en crear soluciones web robustas con Node.js, Angular y PHP. 4 años transformando ideas en productos digitales.
                     </p>
-                    <div class="flex flex-wrap gap-4 mb-8">
-                        <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
+                    <div class="flex flex-wrap gap-3 md:gap-4 mb-8 justify-center md:justify-start">
+                        <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 hover:bg-slate-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 transition text-sm md:text-base">
                             <i class="fab fa-github"></i> GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/Franco Alberto Millanes Araya" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
+                        <a href="https://www.linkedin.com/in/Franco Alberto Millanes Araya" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 transition text-sm md:text-base">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
-                        <a href="mailto:francoding.dev@gmail.com" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
+                        <a href="mailto:francoding.dev@gmail.com" class="bg-purple-600 hover:bg-purple-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 transition text-sm md:text-base">
                             <i class="fas fa-envelope"></i> Email
                         </a>
                     </div>
-                    <div class="flex gap-4">
-                        <button onclick="showCV()" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                    <div class="flex gap-3 md:gap-4 justify-center md:justify-start">
+                        <button onclick="showCV()" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition text-sm md:text-base">
                             <i class="fas fa-eye mr-2"></i>Ver CV
                         </button>
-                        <button onclick="downloadCV()" class="border border-gray-600 hover:border-gray-500 px-6 py-3 rounded-lg font-semibold transition">
+                        <button onclick="downloadCV()" class="border border-gray-600 hover:border-gray-500 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition text-sm md:text-base">
                             <i class="fas fa-download mr-2"></i>Descargar CV
                         </button>
                     </div>
@@ -89,10 +127,10 @@
                 
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
-                        <div class="w-80 h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl float-animation">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl float-animation mobile-image">
                             <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-full h-full object-cover">
                         </div>
-                        <div class="absolute -bottom-4 -right-4 bg-green-500 text-gray-900 px-6 py-2 rounded-full font-bold">
+                        <div class="absolute -bottom-2 md:-bottom-4 -right-2 md:-right-4 bg-green-500 text-gray-900 px-3 md:px-6 py-1 md:py-2 rounded-full font-bold mobile-badge text-xs md:text-sm">
                             Disponible para proyectos
                         </div>
                     </div>
@@ -160,162 +198,162 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- InformaDev -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-white text-5xl"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-4xl md:text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">InformaDev</h3>
-                        <p class="text-gray-400 mb-4">Plataforma educativa para gestión de tareas, horarios y asignaturas. Alternativa moderna a Notion.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2">InformaDev</h3>
+                        <p class="text-gray-400 mb-4 text-sm md:text-base">Plataforma educativa para gestión de tareas, horarios y asignaturas. Alternativa moderna a Notion.</p>
+                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
                             <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">AngularJS</span>
                             <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
                             <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">MySQL</span>
                         </div>
-                        <div class="flex gap-3">
+                        <div class="flex flex-wrap gap-2 md:gap-3">
                             <a href="https://github.com/Franko2015/informadev" target="_blank" class="text-gray-400 hover:text-white transition">
-                                <i class="fab fa-github text-xl"></i>
+                                <i class="fab fa-github text-lg md:text-xl"></i>
                             </a>
-                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('informadev')">
+                            <button class="text-blue-400 hover:text-blue-300 text-sm md:text-base" onclick="showProjectDetails('informadev')">
                                 Ver detalles →
                             </button>
-                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
-                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition">
+                                <i class="fab fa-github mr-1"></i>GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Servicios -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                        <i class="fas fa-cogs text-white text-5xl"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <i class="fas fa-cogs text-white text-4xl md:text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Servicios Web</h3>
-                        <p class="text-gray-400 mb-4">Sistema de gestión de servicios empresariales con backend robusto y frontend moderno.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2">Servicios Web</h3>
+                        <p class="text-gray-400 mb-4 text-sm md:text-base">Sistema de gestión de servicios empresariales con backend robusto y frontend moderno.</p>
+                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
                             <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
                             <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Express</span>
                             <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">REST API</span>
                         </div>
-                        <div class="flex gap-3">
+                        <div class="flex flex-wrap gap-2 md:gap-3">
                             <a href="https://github.com/Franko2015/Servicios" target="_blank" class="text-gray-400 hover:text-white transition">
-                                <i class="fab fa-github text-xl"></i>
+                                <i class="fab fa-github text-lg md:text-xl"></i>
                             </a>
-                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('servicios')">
+                            <button class="text-blue-400 hover:text-blue-300 text-sm md:text-base" onclick="showProjectDetails('servicios')">
                                 Ver detalles →
                             </button>
-                            <a href="https://github.com/Franko2015/Servicios" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
-                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            <a href="https://github.com/Franko2015/Servicios" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition">
+                                <i class="fab fa-github mr-1"></i>GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- SistemaPOS -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                        <i class="fas fa-cash-register text-white text-5xl"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-cash-register text-white text-4xl md:text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Sistema POS</h3>
-                        <p class="text-gray-400 mb-4">Sistema completo de punto de venta con gestión de inventario y procesamiento de pagos.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2">Sistema POS</h3>
+                        <p class="text-gray-400 mb-4 text-sm md:text-base">Sistema completo de punto de venta con gestión de inventario y procesamiento de pagos.</p>
+                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
                             <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">JavaScript</span>
                             <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
                             <span class="bg-red-900 text-red-300 px-2 py-1 rounded text-xs">SQL</span>
                         </div>
-                        <div class="flex gap-3">
+                        <div class="flex flex-wrap gap-2 md:gap-3">
                             <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="text-gray-400 hover:text-white transition">
-                                <i class="fab fa-github text-xl"></i>
+                                <i class="fab fa-github text-lg md:text-xl"></i>
                             </a>
-                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('sistema-pos')">
+                            <button class="text-blue-400 hover:text-blue-300 text-sm md:text-base" onclick="showProjectDetails('sistema-pos')">
                                 Ver detalles →
                             </button>
-                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
-                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition">
+                                <i class="fab fa-github mr-1"></i>GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- LibroDeApuntes -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
-                        <i class="fas fa-book text-white text-5xl"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
+                        <i class="fas fa-book text-white text-4xl md:text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Libro de Apuntes</h3>
-                        <p class="text-gray-400 mb-4">Sistema de gestión de libros y apuntes educativos desarrollado con PHP puro y MySQL.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2">Libro de Apuntes</h3>
+                        <p class="text-gray-400 mb-4 text-sm md:text-base">Sistema de gestión de libros y apuntes educativos desarrollado con PHP puro y MySQL.</p>
+                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
                             <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">PHP</span>
                             <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">MySQL</span>
                         </div>
-                        <div class="flex gap-3">
+                        <div class="flex flex-wrap gap-2 md:gap-3">
                             <a href="https://github.com/Franko2015/LibroDeApuntes-php" target="_blank" class="text-gray-400 hover:text-white transition">
-                                <i class="fab fa-github text-xl"></i>
+                                <i class="fab fa-github text-lg md:text-xl"></i>
                             </a>
-                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('libro-apuntes')">
+                            <button class="text-blue-400 hover:text-blue-300 text-sm md:text-base" onclick="showProjectDetails('libro-apuntes')">
                                 Ver detalles →
                             </button>
-                            <a href="https://github.com/Franko2015/LibroDeApuntes-php" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
-                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            <a href="https://github.com/Franko2015/LibroDeApuntes-php" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition">
+                                <i class="fab fa-github mr-1"></i>GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- API-Proyectos -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center">
-                        <i class="fas fa-server text-white text-5xl"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-server text-white text-4xl md:text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">API Proyectos</h3>
-                        <p class="text-gray-400 mb-4">API RESTful robusta para gestión de proyectos con Node.js y Express.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2">API Proyectos</h3>
+                        <p class="text-gray-400 mb-4 text-sm md:text-base">API RESTful robusta para gestión de proyectos con Node.js y Express.</p>
+                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
                             <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
                             <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Express</span>
                             <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">REST API</span>
                         </div>
-                        <div class="flex gap-3">
+                        <div class="flex flex-wrap gap-2 md:gap-3">
                             <a href="https://github.com/Franko2015/API-PROYECTOS" target="_blank" class="text-gray-400 hover:text-white transition">
-                                <i class="fab fa-github text-xl"></i>
+                                <i class="fab fa-github text-lg md:text-xl"></i>
                             </a>
-                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('api-proyectos')">
+                            <button class="text-blue-400 hover:text-blue-300 text-sm md:text-base" onclick="showProjectDetails('api-proyectos')">
                                 Ver detalles →
                             </button>
-                            <a href="https://github.com/Franko2015/API-PROYECTOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
-                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            <a href="https://github.com/Franko2015/API-PROYECTOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition">
+                                <i class="fab fa-github mr-1"></i>GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- TODO-PHP -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-tasks text-white text-5xl"></i>
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card">
+                    <div class="h-40 md:h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-tasks text-white text-4xl md:text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">TODO App PHP</h3>
-                        <p class="text-gray-400 mb-4">Aplicación de gestión de tareas desarrollada con PHP puro y MySQL.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2">TODO App PHP</h3>
+                        <p class="text-gray-400 mb-4 text-sm md:text-base">Aplicación de gestión de tareas desarrollada con PHP puro y MySQL.</p>
+                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
                             <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">PHP</span>
                             <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">MySQL</span>
                         </div>
-                        <div class="flex gap-3">
+                        <div class="flex flex-wrap gap-2 md:gap-3">
                             <a href="https://github.com/Franko2015/TODO-php" target="_blank" class="text-gray-400 hover:text-white transition">
-                                <i class="fab fa-github text-xl"></i>
+                                <i class="fab fa-github text-lg md:text-xl"></i>
                             </a>
-                            <button class="text-blue-400 hover:text-blue-300 text-sm" onclick="showProjectDetails('todo-php')">
+                            <button class="text-blue-400 hover:text-blue-300 text-sm md:text-base" onclick="showProjectDetails('todo-php')">
                                 Ver detalles →
                             </button>
-                            <a href="https://github.com/Franko2015/TODO-php" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">
-                                <i class="fab fa-github mr-1"></i>Ver en GitHub
+                            <a href="https://github.com/Franko2015/TODO-php" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition">
+                                <i class="fab fa-github mr-1"></i>GitHub
                             </a>
                         </div>
                     </div>
@@ -327,22 +365,22 @@
     <!-- Habilidades -->
     <section id="habilidades" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Habilidades Técnicas</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4 text-gradient">Habilidades Técnicas</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
                     Tecnologías y competencias que domino profesionalmente
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Frontend -->
-                <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
-                    <h3 class="text-xl font-bold mb-4 text-blue-400">Frontend</h3>
-                    <div class="space-y-4">
+                <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 skill-card">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-blue-400">Frontend</h3>
+                    <div class="space-y-3 md:space-y-4">
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>HTML/CSS/JavaScript</span>
-                                <span class="text-blue-400">90%</span>
+                                <span class="text-sm md:text-base">HTML/CSS/JavaScript</span>
+                                <span class="text-blue-400 text-sm md:text-base">90%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
@@ -350,8 +388,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>AngularJS/Angular</span>
-                                <span class="text-blue-400">85%</span>
+                                <span class="text-sm md:text-base">AngularJS/Angular</span>
+                                <span class="text-blue-400 text-sm md:text-base">85%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
@@ -359,8 +397,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>React/Vue.js</span>
-                                <span class="text-blue-400">75%</span>
+                                <span class="text-sm md:text-base">React/Vue.js</span>
+                                <span class="text-blue-400 text-sm md:text-base">75%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
@@ -370,13 +408,13 @@
                 </div>
 
                 <!-- Backend -->
-                <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
-                    <h3 class="text-xl font-bold mb-4 text-green-400">Backend</h3>
-                    <div class="space-y-4">
+                <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 skill-card">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-green-400">Backend</h3>
+                    <div class="space-y-3 md:space-y-4">
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>Node.js/Express</span>
-                                <span class="text-green-400">85%</span>
+                                <span class="text-sm md:text-base">Node.js/Express</span>
+                                <span class="text-green-400 text-sm md:text-base">85%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
@@ -384,8 +422,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>PHP</span>
-                                <span class="text-green-400">80%</span>
+                                <span class="text-sm md:text-base">PHP</span>
+                                <span class="text-green-400 text-sm md:text-base">80%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
@@ -393,8 +431,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>Python</span>
-                                <span class="text-green-400">70%</span>
+                                <span class="text-sm md:text-base">Python</span>
+                                <span class="text-green-400 text-sm md:text-base">70%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
@@ -404,13 +442,13 @@
                 </div>
 
                 <!-- Database & DevOps -->
-                <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Database & DevOps</h3>
-                    <div class="space-y-4">
+                <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 skill-card">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-purple-400">Database & DevOps</h3>
+                    <div class="space-y-3 md:space-y-4">
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>MySQL/PostgreSQL</span>
-                                <span class="text-purple-400">85%</span>
+                                <span class="text-sm md:text-base">MySQL/PostgreSQL</span>
+                                <span class="text-purple-400 text-sm md:text-base">85%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
@@ -418,8 +456,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>MongoDB</span>
-                                <span class="text-purple-400">75%</span>
+                                <span class="text-sm md:text-base">MongoDB</span>
+                                <span class="text-purple-400 text-sm md:text-base">75%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
@@ -427,8 +465,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span>Git/Docker</span>
-                                <span class="text-purple-400">80%</span>
+                                <span class="text-sm md:text-base">Git/Docker</span>
+                                <span class="text-purple-400 text-sm md:text-base">80%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2">
                                 <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
@@ -439,15 +477,15 @@
             </div>
 
             <!-- Soft Skills -->
-            <div class="mt-12">
-                <h3 class="text-2xl font-bold mb-6 text-center">Habilidades Blandas</h3>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Comunicación Efectiva</span>
-                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Trabajo en Equipo</span>
-                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Resolución de Problemas</span>
-                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Liderazgo</span>
-                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Adaptabilidad</span>
-                    <span class="bg-slate-700 px-4 py-2 rounded-full text-sm">Creatividad</span>
+            <div class="mt-8 md:mt-12">
+                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">Habilidades Blandas</h3>
+                <div class="flex flex-wrap justify-center gap-2 md:gap-3">
+                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Comunicación Efectiva</span>
+                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Trabajo en Equipo</span>
+                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Resolución de Problemas</span>
+                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Liderazgo</span>
+                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Adaptabilidad</span>
+                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Creatividad</span>
                 </div>
             </div>
         </div>
@@ -456,9 +494,9 @@
     <!-- Experiencia -->
     <section id="experiencia" class="py-20 bg-slate-900">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Experiencia Laboral</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4 text-gradient">Experiencia Laboral</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
                     Mi trayectoria profesional en el mundo tecnológico
                 </p>
             </div>
@@ -475,13 +513,13 @@
                                 <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300">
                                     <div class="flex items-center justify-between mb-3">
                                         <h3 class="text-xl font-bold">Ingeniero de Soporte TI</h3>
-                                        <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Actual</span>
+                                        <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Marzo 2026</span>
                                     </div>
                                     <h4 class="text-blue-400 mb-2 flex items-center justify-end">
                                         <i class="fas fa-building mr-2"></i>TIBOX
                                     </h4>
                                     <p class="text-gray-400 text-sm mb-3 flex items-center justify-end">
-                                        <i class="fas fa-calendar mr-2"></i>May 2024 - Presente
+                                        <i class="fas fa-calendar mr-2"></i>Mayo 2024 - Presente
                                     </p>
                                     <p class="text-gray-300">Soporte técnico especializado y administración de sistemas.</p>
                                 </div>
@@ -507,7 +545,7 @@
                                         <i class="fas fa-building mr-2"></i>APFRUT
                                     </h4>
                                     <p class="text-gray-400 text-sm mb-3 flex items-center">
-                                        <i class="fas fa-calendar mr-2"></i>Nov 2022 - Dic 2022
+                                        <i class="fas fa-calendar mr-2"></i>Noviembre 2022 - Dic 2022
                                     </p>
                                     <p class="text-gray-300">Soporte técnico y mantenimiento de sistemas.</p>
                                 </div>
@@ -525,7 +563,7 @@
                                         <i class="fas fa-building mr-2"></i>SOC. TEL. NOVAVISIÓN SPA
                                     </h4>
                                     <p class="text-gray-400 text-sm mb-3 flex items-center justify-end">
-                                        <i class="fas fa-calendar mr-2"></i>Ene 2018 - Feb 2023
+                                        <i class="fas fa-calendar mr-2"></i>Enero 2018 - Febrero 2023
                                     </p>
                                     <p class="text-gray-300">Gestión administrativa y soporte técnico integral.</p>
                                 </div>
@@ -539,48 +577,48 @@
                 </div>
 
                 <!-- Mobile Cards -->
-                <div class="md:hidden space-y-6">
+                <div class="md:hidden space-y-4">
                     <!-- Experience 1 -->
-                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 border-blue-500">
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-4 md:p-6 rounded-xl border-l-4 border-blue-500">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold">Ingeniero de Soporte TI</h3>
+                            <h3 class="text-lg md:text-xl font-bold">Ingeniero de Soporte TI</h3>
                             <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Actual</span>
                         </div>
-                        <h4 class="text-blue-400 mb-2 flex items-center">
+                        <h4 class="text-blue-400 mb-2 flex items-center text-sm md:text-base">
                             <i class="fas fa-briefcase mr-2"></i>TIBOX
                         </h4>
                         <p class="text-gray-400 text-sm mb-3 flex items-center">
-                            <i class="fas fa-clock mr-2"></i>May 2024 - Presente
+                            <i class="fas fa-clock mr-2"></i>Mayo 2024 - Presente
                         </p>
-                        <p class="text-gray-300">Soporte técnico especializado y administración de sistemas.</p>
+                        <p class="text-gray-300 text-sm md:text-base">Soporte técnico especializado y administración de sistemas.</p>
                     </div>
 
                     <!-- Experience 2 -->
-                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 border-purple-500">
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-4 md:p-6 rounded-xl border-l-4 border-purple-500">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold">Asistente de Informática</h3>
+                            <h3 class="text-lg md:text-xl font-bold">Asistente de Informática</h3>
                         </div>
-                        <h4 class="text-purple-400 mb-2 flex items-center">
+                        <h4 class="text-purple-400 mb-2 flex items-center text-sm md:text-base">
                             <i class="fas fa-briefcase mr-2"></i>APFRUT
                         </h4>
                         <p class="text-gray-400 text-sm mb-3 flex items-center">
                             <i class="fas fa-clock mr-2"></i>Nov 2022 - Dic 2022
                         </p>
-                        <p class="text-gray-300">Soporte técnico y mantenimiento de sistemas.</p>
+                        <p class="text-gray-300 text-sm md:text-base">Soporte técnico y mantenimiento de sistemas.</p>
                     </div>
 
                     <!-- Experience 3 -->
-                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 border-green-500">
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-4 md:p-6 rounded-xl border-l-4 border-green-500">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold">Secretario Administrativo</h3>
+                            <h3 class="text-lg md:text-xl font-bold">Secretario Administrativo</h3>
                         </div>
-                        <h4 class="text-green-400 mb-2 flex items-center">
+                        <h4 class="text-green-400 mb-2 flex items-center text-sm md:text-base">
                             <i class="fas fa-briefcase mr-2"></i>SOC. TEL. NOVAVISIÓN SPA
                         </h4>
                         <p class="text-gray-400 text-sm mb-3 flex items-center">
-                            <i class="fas fa-clock mr-2"></i>Ene 2018 - Feb 2023
+                            <i class="fas fa-clock mr-2"></i>Enero 2018 - Febrero 2023
                         </p>
-                        <p class="text-gray-300">Gestión administrativa y soporte técnico integral.</p>
+                        <p class="text-gray-300 text-sm md:text-base">Gestión administrativa y soporte técnico integral.</p>
                     </div>
                 </div>
             </div>
@@ -590,65 +628,65 @@
     <!-- Contacto -->
     <section id="contacto" class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Contacto</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4 text-gradient">Contacto</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
                     ¿Listo para trabajar juntos? Ponte en contacto y hagamos algo increíble
                 </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <div>
-                        <form id="contact-form" class="space-y-4">
+                        <form id="contact-form" class="space-y-4 contact-form">
                             <div>
-                                <input type="text" id="form-name" placeholder="Nombre *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                <input type="text" id="form-name" placeholder="Nombre *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base">
                             </div>
                             <div>
-                                <input type="email" id="form-email" placeholder="Email *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                <input type="email" id="form-email" placeholder="Email *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base">
                             </div>
                             <div>
-                                <input type="text" id="form-company" placeholder="Empresa (opcional)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                <input type="text" id="form-company" placeholder="Empresa (opcional)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base">
                             </div>
                             <div>
-                                <textarea id="form-message" placeholder="Mensaje *" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"></textarea>
+                                <textarea id="form-message" placeholder="Mensaje *" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-3 rounded-lg font-semibold transition flex items-center justify-center">
+                            <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-3 rounded-lg font-semibold transition flex items-center justify-center text-sm md:text-base">
                                 <i class="fab fa-whatsapp mr-2"></i>Enviar por WhatsApp
                             </button>
                         </form>
                     </div>
                     
-                    <div class="space-y-6">
-                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
-                            <h3 class="font-bold mb-4 text-blue-400">Información Directa</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3">
-                                    <i class="fas fa-envelope text-gray-400"></i>
-                                    <span>francoding.dev@gmail.com</span>
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700">
+                            <h3 class="font-bold mb-3 md:mb-4 text-blue-400 text-lg md:text-xl">Información Directa</h3>
+                            <div class="space-y-2 md:space-y-3">
+                                <div class="flex items-center gap-2 md:gap-3">
+                                    <i class="fas fa-envelope text-gray-400 text-sm md:text-base"></i>
+                                    <span class="text-sm md:text-base">francoding.dev@gmail.com</span>
                                 </div>
-                                <div class="flex items-center gap-3">
-                                    <i class="fas fa-phone text-gray-400"></i>
-                                    <span>+56954849143</span>
+                                <div class="flex items-center gap-2 md:gap-3">
+                                    <i class="fas fa-phone text-gray-400 text-sm md:text-base"></i>
+                                    <span class="text-sm md:text-base">+56954849143</span>
                                 </div>
-                                <div class="flex items-center gap-3">
-                                    <i class="fas fa-map-marker-alt text-gray-400"></i>
-                                    <span>Curicó, Chile</span>
+                                <div class="flex items-center gap-2 md:gap-3">
+                                    <i class="fas fa-map-marker-alt text-gray-400 text-sm md:text-base"></i>
+                                    <span class="text-sm md:text-base">Curicó, Chile</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
-                            <h3 class="font-bold mb-4 text-purple-400">Redes Sociales</h3>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
-                                    <i class="fab fa-github"></i>
+                        <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700">
+                            <h3 class="font-bold mb-3 md:mb-4 text-purple-400 text-lg md:text-xl">Redes Sociales</h3>
+                            <div class="flex gap-3 md:gap-4">
+                                <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 p-2 md:p-3 rounded-lg hover:bg-slate-700 transition">
+                                    <i class="fab fa-github text-lg md:text-xl"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/franco-alberto-m/" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
-                                    <i class="fab fa-linkedin"></i>
+                                <a href="https://www.linkedin.com/in/franco-alberto-m/" target="_blank" class="bg-slate-800 p-2 md:p-3 rounded-lg hover:bg-slate-700 transition">
+                                    <i class="fab fa-linkedin text-lg md:text-xl"></i>
                                 </a>
-                                <a href="https://wa.me/56954849143" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-slate-700 transition">
-                                    <i class="fab fa-whatsapp"></i>
+                                <a href="https://wa.me/56954849143" target="_blank" class="bg-slate-800 p-2 md:p-3 rounded-lg hover:bg-slate-700 transition">
+                                    <i class="fab fa-whatsapp text-lg md:text-xl"></i>
                                 </a>
                             </div>
                         </div>
@@ -669,84 +707,84 @@
     </footer>
 
     <!-- Modal CV -->
-    <div id="cv-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-slate-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
+    <div id="cv-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-2 md:p-4">
+        <div class="bg-slate-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content">
+            <div class="p-4 md:p-6">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-2xl font-bold">Mi Curriculum Vitae</h3>
-                    <button onclick="closeCV()" class="text-gray-400 hover:text-white">
+                    <h3 class="text-xl md:text-2xl font-bold">Mi Curriculum Vitae</h3>
+                    <button onclick="closeCV()" class="text-gray-400 hover:text-white p-2">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                 </div>
-                <div class="bg-slate-900 p-8 rounded-lg">
-                    <div class="text-center mb-8">
-                        <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-32 h-32 rounded-full mx-auto mb-4">
-                        <h1 class="text-3xl font-bold mb-2">Franco Millanes Araya</h1>
-                        <p class="text-gray-400">Ingeniero Informático | Full Stack Developer</p>
+                <div class="bg-slate-900 p-4 md:p-8 rounded-lg">
+                    <div class="text-center mb-6 md:mb-8">
+                        <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4">
+                        <h1 class="text-2xl md:text-3xl font-bold mb-2">Franco Millanes Araya</h1>
+                        <p class="text-gray-400 text-sm md:text-base">Ingeniero Informático | Full Stack Developer</p>
                     </div>
                     
-                    <div class="space-y-6 text-gray-300">
+                    <div class="space-y-4 md:space-y-6 text-gray-300 text-sm md:text-base">
                         <div>
-                            <h2 class="text-xl font-bold mb-3 text-blue-400">Resumen Profesional</h2>
-                            <p>Ingeniero informático con 4 años de experiencia en desarrollo de software full stack. Especializado en crear aplicaciones web robustas con Node.js, Angular y PHP. Apasionado por resolver problemas complejos y transformar ideas en productos digitales exitosos.</p>
+                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-blue-400">Resumen Profesional</h2>
+                            <p class="text-sm md:text-base">Ingeniero informático con 4 años de experiencia en desarrollo de software full stack. Especializado en crear aplicaciones web robustas con Node.js, Angular y PHP. Apasionado por resolver problemas complejos y transformar ideas en productos digitales exitosos.</p>
                         </div>
                         
                         <div>
-                            <h2 class="text-xl font-bold mb-3 text-green-400">Experiencia Laboral</h2>
-                            <div class="space-y-4">
-                                <div class="border-l-4 border-blue-500 pl-4">
-                                    <h3 class="font-bold">Ingeniero de Soporte TI</h3>
-                                    <p class="text-gray-400">TIBOX | May 2024 - Presente</p>
-                                    <p>Soporte técnico especializado y administración de sistemas.</p>
+                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-green-400">Experiencia Laboral</h2>
+                            <div class="space-y-3 md:space-y-4">
+                                <div class="border-l-4 border-blue-500 pl-3 md:pl-4">
+                                    <h3 class="font-bold text-sm md:text-base">Ingeniero de Soporte TI</h3>
+                                    <p class="text-gray-400 text-xs md:text-sm">TIBOX | May 2024 - Presente</p>
+                                    <p class="text-xs md:text-sm">Soporte técnico especializado y administración de sistemas.</p>
                                 </div>
-                                <div class="border-l-4 border-purple-500 pl-4">
-                                    <h3 class="font-bold">Asistente de Informática</h3>
-                                    <p class="text-gray-400">APFRUT | Nov 2022 - Dic 2022</p>
-                                    <p>Soporte técnico y mantenimiento de sistemas informáticos.</p>
+                                <div class="border-l-4 border-purple-500 pl-3 md:pl-4">
+                                    <h3 class="font-bold text-sm md:text-base">Asistente de Informática</h3>
+                                    <p class="text-gray-400 text-xs md:text-sm">APFRUT | Nov 2022 - Dic 2022</p>
+                                    <p class="text-xs md:text-sm">Soporte técnico y mantenimiento de sistemas informáticos.</p>
                                 </div>
-                                <div class="border-l-4 border-green-500 pl-4">
-                                    <h3 class="font-bold">Secretario Administrativo</h3>
-                                    <p class="text-gray-400">SOC. TEL. NOVAVISIÓN SPA | Ene 2018 - Feb 2023</p>
-                                    <p>Gestión administrativa y soporte técnico integral.</p>
+                                <div class="border-l-4 border-green-500 pl-3 md:pl-4">
+                                    <h3 class="font-bold text-sm md:text-base">Secretario Administrativo</h3>
+                                    <p class="text-gray-400 text-xs md:text-sm">SOC. TEL. NOVAVISIÓN SPA | Ene 2018 - Feb 2023</p>
+                                    <p class="text-xs md:text-sm">Gestión administrativa y soporte técnico integral.</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div>
-                            <h2 class="text-xl font-bold mb-3 text-purple-400">Habilidades Técnicas</h2>
-                            <div class="grid grid-cols-2 gap-4">
+                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-purple-400">Habilidades Técnicas</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                                 <div>
-                                    <h3 class="font-bold mb-2">Frontend</h3>
-                                    <p>HTML, CSS, JavaScript, AngularJS, Angular, React, Vue.js</p>
+                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Frontend</h3>
+                                    <p class="text-xs md:text-sm">HTML, CSS, JavaScript, AngularJS, Angular, React, Vue.js</p>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold mb-2">Backend</h3>
-                                    <p>Node.js, Express, PHP, Python, Java</p>
+                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Backend</h3>
+                                    <p class="text-xs md:text-sm">Node.js, Express, PHP, Python, Java</p>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold mb-2">Base de Datos</h3>
-                                    <p>MySQL, PostgreSQL, MongoDB, SQL Server</p>
+                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Base de Datos</h3>
+                                    <p class="text-xs md:text-sm">MySQL, PostgreSQL, MongoDB, SQL Server</p>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold mb-2">Herramientas</h3>
-                                    <p>Git, Docker, AWS, Firebase, REST APIs</p>
+                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Herramientas</h3>
+                                    <p class="text-xs md:text-sm">Git, Docker, AWS, Firebase, REST APIs</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div>
-                            <h2 class="text-xl font-bold mb-3 text-yellow-400">Educación</h2>
-                            <p class="border-l-4 border-yellow-500 pl-4">
-                                <strong>Ingeniería en Informática</strong><br>
+                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-yellow-400">Educación</h2>
+                            <p class="border-l-4 border-yellow-500 pl-3 md:pl-4 text-sm md:text-base">
+                                <strong class="text-sm md:text-base">Ingeniería en Informática</strong><br>
                                 INACAP<br>
-                                <strong>Analista Programador</strong><br>
+                                <strong class="text-sm md:text-base">Analista Programador</strong><br>
                                 INACAP
                             </p>
                         </div>
                         
                         <div>
-                            <h2 class="text-xl font-bold mb-3 text-red-400">Contacto</h2>
-                            <p>📧 francoding.dev@gmail.com<br>
+                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-red-400">Contacto</h2>
+                            <p class="text-sm md:text-base">📧 francoding.dev@gmail.com<br>
                             📱 +56954849143<br>
                             📍 Curicó, Chile<br>
                             🔗 github.com/Franko2015</p>
@@ -758,29 +796,32 @@
     </div>
 
     <!-- Project Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-slate-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-2 md:p-4">
+        <div class="bg-slate-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-content">
+            <div class="p-4 md:p-6">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 id="project-title" class="text-2xl font-bold"></h3>
-                    <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white">
+                    <h3 id="project-title" class="text-xl md:text-2xl font-bold"></h3>
+                    <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white p-2">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                 </div>
-                <div id="project-content"></div>
+                <div id="project-content" class="text-sm md:text-base"></div>
             </div>
         </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-slate-900 bg-opacity-95 z-40 hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <a href="#inicio" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Inicio</a>
-            <a href="#sobre-mi" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Sobre Mí</a>
-            <a href="#proyectos" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Proyectos</a>
-            <a href="#habilidades" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Habilidades</a>
-            <a href="#experiencia" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Experiencia</a>
-            <a href="#contacto" onclick="toggleMobileMenu()" class="text-2xl hover:text-blue-400 transition">Contacto</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-900 bg-opacity-98 z-40 hidden mobile-menu-overlay">
+        <div class="flex flex-col items-center justify-center h-full space-y-6 p-4">
+            <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <a href="#inicio" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Inicio</a>
+            <a href="#sobre-mi" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Sobre Mí</a>
+            <a href="#proyectos" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Proyectos</a>
+            <a href="#habilidades" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Habilidades</a>
+            <a href="#experiencia" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Experiencia</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Contacto</a>
         </div>
     </div>
 
