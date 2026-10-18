@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,154 +8,185 @@
 <meta property="og:title" content="Franco Millanes Araya | Desarrollador Full-Stack y Soporte TI">
 <meta property="og:description" content="Proyectos reales en Angular, Node.js, PHP y TypeScript. Disponibilidad inmediata, remoto o presencial en el Maule.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EFM%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Franco Millanes Araya","jobTitle":"Desarrollador Full-Stack e Ingeniero de Soporte TI","email":"mailto:francoding.dev@gmail.com","telephone":"+56998110665","address":{"@type":"PostalAddress","addressLocality":"Romeral, Curicó","addressRegion":"Maule","addressCountry":"CL"},"url":"https://franko2015.github.io/freelancer/","sameAs":["https://github.com/Franko2015","https://www.linkedin.com/in/franco-millanes-araya-a69b2342b/"],"knowsAbout":["Angular","Node.js","PHP","TypeScript","MySQL","Docker","Active Directory","Azure","Microsoft 365"]}
 </script>
-<style>
-:root{--bg:#f7f8fa;--card:#fff;--text:#1b2430;--muted:#5b6675;--accent:#2563eb;--line:#e3e7ee}
-@media (prefers-color-scheme:dark){:root{--bg:#0f141b;--card:#171e28;--text:#e8edf4;--muted:#9aa6b5;--accent:#5b9bff;--line:#262f3c}}
-*{box-sizing:border-box}
-body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
-a{color:var(--accent)}
-.wrap{max-width:980px;margin:0 auto;padding:0 16px}
-header.hero{padding:48px 0 32px}
-.hero .row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-.avatar{width:132px;height:132px;border-radius:50%;object-fit:cover;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;flex:none;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
-h1{margin:0 0 4px;font-size:clamp(28px,5vw,40px);line-height:1.15}
-.role{color:var(--accent);font-weight:600;margin:0 0 8px}
-.lead{color:var(--muted);max-width:60ch;margin:0 0 16px}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
-.badges li{font-size:13px;border:1px solid var(--line);background:var(--card);padding:3px 10px;border-radius:999px}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-block;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--accent);color:var(--accent);background:transparent}
-.btn.primary{background:var(--accent);color:#fff}
-section{padding:28px 0}
-h2{font-size:22px;margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column}
-.card h3{margin:0 0 6px;font-size:18px}
-.card p{margin:0 0 12px;color:var(--muted);font-size:15px;flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;padding:0;list-style:none}
-.tags li{font-size:12px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);padding:2px 8px;border-radius:6px}
-.links{display:flex;gap:14px;font-size:14px;font-weight:600}
-.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
-.skill{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
-.skill b{display:block;margin-bottom:4px}
-.skill span{color:var(--muted);font-size:14px}
-.tl{list-style:none;padding:0;margin:0}
-.tl li{border-left:3px solid var(--accent);padding:0 0 16px 14px;margin-left:4px}
-.tl small{color:var(--muted)}
-footer{padding:28px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-#more .card{padding:14px}
-</style>
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<header class="hero"><div class="wrap">
-  <div class="row">
-    <div class="avatar" id="avatar" aria-label="Foto de Franco Millanes">FM</div>
-    <div>
-      <h1>Franco Millanes Araya</h1>
-      <p class="role">Desarrollador Full-Stack · Ingeniero de Soporte TI</p>
-      <p class="lead">Ingeniero en Informática de Romeral, Curicó (Chile). Construyo aplicaciones web con Angular, Node.js, TypeScript y PHP, y tengo experiencia real administrando infraestructura TI para empresas (Active Directory, Azure, Microsoft 365, Fortinet, VMware).</p>
-      <ul class="badges">
-        <li>Disponibilidad inmediata</li>
-        <li>Remoto o presencial en el Maule</li>
-        <li>Indefinido, plazo fijo o freelance</li>
-      </ul>
-      <div class="btns">
-        <a class="btn primary" href="mailto:francoding.dev@gmail.com">Contactar</a>
-        <a class="btn" href="https://github.com/Franko2015">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/franco-millanes-araya-a69b2342b/">LinkedIn</a>
-        <a class="btn" href="CV_Franco_Millanes_Desarrollador.docx" download>CV Desarrollador</a>
-        <a class="btn" href="CV_Franco_Millanes_Soporte_TI.docx" download>CV Soporte TI</a>
-      </div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="logo" href="#inicio">Franco<span>.dev</span></a>
+    <ul id="menu">
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="tools">
+      <button class="icon-btn" id="theme" aria-label="Cambiar tema">🌙</button>
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
     </div>
   </div>
-</div></header>
+</nav>
 
-<main class="wrap">
+<main id="contenido">
+<header class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span> Abierto a nuevas oportunidades</span>
+      <h1>Hola, soy Franco.<br><span class="grad">Desarrollo software y cuido infraestructura TI.</span></h1>
+      <p class="lead">Ingeniero en Informática de Romeral, Curicó. Construyo aplicaciones web con Angular, Node.js, TypeScript y PHP, y tengo experiencia administrando servidores, Active Directory, Azure y Microsoft 365 para empresas.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contacto">Hablemos</a>
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+        <a class="btn" href="cv.html">Ver mi CV</a>
+        <a class="btn" href="assets/cv/CV_Franco_Millanes_Desarrollador.docx" download>CV Desarrollador (.docx)</a>
+        <a class="btn" href="assets/cv/CV_Franco_Millanes_Soporte_TI.docx" download>CV Soporte TI (.docx)</a>
+      </div>
+      <ul class="meta">
+        <li>📍 Curicó, Maule</li>
+        <li>🏠 Remoto o presencial</li>
+        <li>📄 Indefinido, plazo fijo o freelance</li>
+      </ul>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-ring"><img id="photo" src="assets/img/avataaars.png" alt="Foto de Franco Millanes Araya" width="320" height="320"></div>
+    </div>
+  </div>
+</header>
+
 <section id="proyectos">
-  <h2>Proyectos destacados</h2>
-  <p class="sub">Todo el código es público en mi GitHub y varios tienen demo en vivo.</p>
-  <div class="grid" id="featured"></div>
+  <div class="wrap reveal">
+    <p class="eyebrow">Proyectos</p>
+    <h2>Cosas que he construido</h2>
+    <p class="sub">Tres proyectos que puedes abrir y probar ahora mismo. Todo el código es público.</p>
+    <div class="grid" id="featured"></div>
+    <p class="more-link"><a class="btn" href="https://github.com/Franko2015" target="_blank" rel="noopener">Ver todos mis repositorios en GitHub</a></p>
+  </div>
+</section>
+
+<section id="sobre-mi" class="alt">
+  <div class="wrap about reveal">
+    <div>
+      <p class="eyebrow">Sobre mí</p>
+      <h2>Desarrollador con los pies en la infraestructura</h2>
+      <p>Soy <strong>Ingeniero en Informática</strong> y <strong>Analista Programador</strong> titulado en INACAP. Mi proyecto de título fue un <strong>ERP con un asistente de IA</strong> capaz de consultar la base de datos y ayudar a detectar errores.</p>
+      <p>Durante dos años fui <strong>Ingeniero de Soporte TI en Tibox</strong>, donde administré servidores, redes y servicios críticos de clientes empresariales. Esa experiencia me hace escribir código pensando en cómo se despliega, se monitorea y se mantiene.</p>
+      <p>Hoy trabajo como <strong>Ingeniero de Soporte TI en Aurora Australis</strong> (Teno), y sigo abierto a oportunidades como <strong>desarrollador</strong> o <strong>soporte TI</strong>.</p>
+      <p>Puedo aportar en forma remota o presencial en el Maule y alrededores (Talca, Molina, Rancagua, Santiago según condiciones). Tengo vehículo propio.</p>
+
+    </div>
+    <div class="stats">
+      <div class="stat"><b>2 títulos</b><span>Ingeniería en Informática y Analista Programador</span></div>
+      <div class="stat"><b>2+ años</b><span>en soporte e infraestructura TI</span></div>
+      <div class="stat"><b>3</b><span>proyectos con demo en vivo y código público</span></div>
+      <div class="stat"><b>5+ / día</b><span>tickets resueltos, respuesta de 1 h en emergencias</span></div>
+    </div>
+  </div>
 </section>
 
 <section id="habilidades">
-  <h2>Habilidades</h2>
-  <div class="skills">
-    <div class="skill"><b>Frontend</b><span>Angular, TypeScript, JavaScript, HTML, CSS, Vue.js</span></div>
-    <div class="skill"><b>Backend</b><span>PHP, Node.js, Express, APIs REST, JWT</span></div>
-    <div class="skill"><b>Bases de datos</b><span>MySQL, SQL</span></div>
-    <div class="skill"><b>DevOps</b><span>Docker, Git, Linux, Vercel, Railway, GitHub Pages</span></div>
-    <div class="skill"><b>Infraestructura TI</b><span>Active Directory, Azure, Microsoft 365, Windows Server, VMware, Fortinet, Zabbix, PowerShell</span></div>
-    <div class="skill"><b>IA</b><span>Integración de Google Gemini API</span></div>
+  <div class="wrap reveal">
+    <p class="eyebrow">Habilidades</p>
+    <h2>Stack y herramientas</h2>
+    <p class="sub">Con el nivel real que tengo en cada una.</p>
+    <div class="skills">
+      <div class="skgroup"><h3>Desarrollo</h3>
+        <div class="sk"><div class="sk-top">PHP <em>Avanzado</em></div><div class="bar"><i style="--w:90%"></i></div></div>
+        <div class="sk"><div class="sk-top">TypeScript <em>Avanzado</em></div><div class="bar"><i style="--w:90%"></i></div></div>
+        <div class="sk"><div class="sk-top">Angular <em>Intermedio</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+        <div class="sk"><div class="sk-top">Node.js / Express <em>Intermedio</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+        <div class="sk"><div class="sk-top">MySQL <em>Intermedio</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+        <div class="sk"><div class="sk-top">Kotlin · C# <em>Básico</em></div><div class="bar"><i style="--w:35%"></i></div></div>
+      </div>
+      <div class="skgroup"><h3>Infraestructura y soporte</h3>
+        <div class="sk"><div class="sk-top">Active Directory <em>Avanzado</em></div><div class="bar"><i style="--w:90%"></i></div></div>
+        <div class="sk"><div class="sk-top">Docker <em>Avanzado</em></div><div class="bar"><i style="--w:90%"></i></div></div>
+        <div class="sk"><div class="sk-top">Azure <em>Intermedio</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+        <div class="sk"><div class="sk-top">Microsoft 365 <em>Intermedio</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+        <div class="sk"><div class="sk-top">Linux <em>Intermedio</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+        <div class="sk"><div class="sk-top">Redes <em>Básico</em></div><div class="bar"><i style="--w:35%"></i></div></div>
+      </div>
+      <div class="skgroup"><h3>También uso</h3>
+        <ul class="tags" style="margin:0">
+          <li>Fortinet</li><li>VMware</li><li>Zabbix</li><li>PowerShell</li><li>VPN</li><li>Windows Server</li>
+          <li>Git</li><li>GitHub</li><li>Vercel</li><li>Railway</li><li>APIs REST</li><li>JWT</li>
+          <li>Gemini API</li><li>Vue.js</li><li>HTML y CSS</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="experiencia">
-  <h2>Experiencia</h2>
-  <ul class="tl">
-    <li><b>Ingeniero de Soporte TI</b> · Tibox Chile<br><small>04/2024 – 03/2026</small><br>Monitoreo y soporte de servidores, redes y servicios críticos de clientes empresariales; más de 5 tickets diarios y respuesta de 1 hora en emergencias.</li>
-    <li><b>Digitador y administrador del sistema de trazabilidad</b> · APFRUT<br><small>11/2023 – 01/2024</small><br>Administración del sistema de la máquina UNITEC de cerezas: productores, kilos y control de recursos.</li>
-    <li><b>Secretario Administrativo y soporte técnico</b> · Novavisión SpA<br><small>01/2018 – 02/2022</small><br>Atención a clientes, derivación de requerimientos técnicos y soporte básico de redes.</li>
-    <li><b>Ingeniero en Informática</b> · INACAP · 2025<br>Proyecto de título: ERP con asistente de IA para consultar la base de datos.</li>
-    <li><b>Analista Programador</b> · INACAP Curicó · 2022<br>Proyecto de título: sistema web de gestión de eventos y asistentes.</li>
-  </ul>
+<section id="experiencia" class="alt">
+  <div class="wrap reveal">
+    <p class="eyebrow">Trayectoria</p>
+    <h2>Experiencia y educación</h2>
+    <p class="sub">&nbsp;</p>
+    <div class="two">
+      <div>
+        <h3>Experiencia laboral</h3>
+        <ol class="tl">
+          <li><h3>Ingeniero de Soporte TI</h3><span class="org">Aurora Australis S.A. · Teno, Maule · Presencial</span><time>10/2026 – Actualidad</time>
+            <ul><li>Soporte técnico e infraestructura de tecnologías de la información, jornada completa.</li></ul></li>
+          <li><h3>Técnico de Soporte TI</h3><span class="org">Ranco Cherries · Chimbarongo, O'Higgins · Presencial</span><time>09/2026 – 10/2026</time>
+            <ul><li>Soporte técnico e infraestructura de tecnologías de la información, jornada completa.</li></ul></li>
+          <li><h3>Ingeniero de Soporte TI</h3><span class="org">Tibox Chile</span><time>04/2024 – 03/2026</time>
+            <ul><li>Monitoreo y administración de servidores, redes y servicios críticos de clientes empresariales.</li>
+            <li>Active Directory, Azure, Microsoft 365, VPN, Fortinet y VMware.</li>
+            <li>5 o más tickets diarios; respuesta de 1 hora en emergencias.</li></ul></li>
+          <li><h3>Digitador y administrador del sistema de trazabilidad</h3><span class="org">APFRUT</span><time>11/2023 – 01/2024</time>
+            <ul><li>Administré el sistema de la máquina UNITEC de cerezas: productores, kilos y control de recursos.</li></ul></li>
+          <li><h3>Secretario Administrativo y soporte técnico</h3><span class="org">Novavisión SpA</span><time>01/2018 – 02/2022</time>
+            <ul><li>Atención a clientes, derivación de requerimientos técnicos y soporte básico de routers.</li></ul></li>
+        </ol>
+      </div>
+      <div>
+        <h3>Educación</h3>
+        <ol class="tl">
+          <li><h3>Ingeniero en Informática</h3><span class="org">INACAP</span><time>Titulado en 2025</time>
+            <ul><li>Proyecto de título: ERP completo con asistente de IA para consultar la base de datos.</li></ul></li>
+          <li><h3>Analista Programador</h3><span class="org">INACAP, Curicó</span><time>Titulado en 2022</time>
+            <ul><li>Proyecto de título: sistema web para gestionar eventos y sus asistentes.</li></ul></li>
+        </ol>
+        <a class="btn primary" href="cv.html">Ver CV completo</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="mas">
-  <h2>Más en GitHub</h2>
-  <p class="sub">Lista actualizada automáticamente desde mi cuenta.</p>
-  <div class="grid" id="more"></div>
+<section id="contacto" class="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow">Contacto</p>
+    <h2>¿Trabajamos juntos?</h2>
+    <p class="sub">Escríbeme o llámame. Estoy abierto a oportunidades de trabajo remoto o presencial.</p>
+    <div class="contact-cards">
+      <div class="ccard"><small>Correo</small><b>francoding.dev@gmail.com</b><button data-copy="francoding.dev@gmail.com">Copiar</button></div>
+      <div class="ccard"><small>Teléfono / WhatsApp</small><b>+56 9 9811 0665</b><button data-copy="+56998110665">Copiar</button></div>
+      <div class="ccard"><small>Ubicación</small><b>Romeral, Curicó, Maule</b></div>
+    </div>
+    <div class="cta" style="justify-content:center">
+      <a class="btn primary" href="mailto:francoding.dev@gmail.com">Enviar correo</a>
+      <a class="btn" href="https://wa.me/56998110665" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="https://www.linkedin.com/in/franco-millanes-araya-a69b2342b/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Franko2015" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  Franco Millanes Araya · Romeral, Curicó, Chile · <a href="mailto:francoding.dev@gmail.com">francoding.dev@gmail.com</a> · <a href="tel:+56998110665">+56 9 9811 0665</a>
-</div></footer>
-
-<script>
-var USER = "Franko2015";
-var FEATURED = [
-  {repo:"Cuaderno-Online", title:"Cuaderno Online (My-Notion)", desc:"App de notas estilo Notion con chatbot de IA (Google Gemini), editor con texto, dibujo y markdown, tema claro/oscuro y diseño responsivo.", tags:["TypeScript","Gemini API","IA"], demo:"https://cuaderno-online-production.up.railway.app/"},
-  {repo:"informadev", title:"InformaDev", desc:"Plataforma para estudiantes: tareas, horarios e información de asignaturas, con autenticación JWT.", tags:["Angular","Node.js","Express","MySQL","JWT"]},
-  {repo:"mitienda", title:"MiTienda", desc:"Aplicación web de tienda en línea desplegada en producción.", tags:["JavaScript","Vercel"], demo:"https://mitienda-iota.vercel.app"},
-  {repo:"totown", title:"ToTown", desc:"Aplicación web desplegada en Vercel.", tags:["JavaScript","Vercel"], demo:"https://totown.vercel.app"},
-  {repo:"nutricom", title:"Nutricom", desc:"Aplicación web desarrollada con Angular.", tags:["Angular","TypeScript"]},
-  {repo:"SistemaMeApunto", title:"Sistema Me Apunto", desc:"Sistema web de inscripción y registro.", tags:["HTML","JavaScript"], demo:"https://sistema-me-apunto.vercel.app"},
-  {repo:"SistemaPOS", title:"Sistema POS", desc:"Sistema de punto de venta de escritorio.", tags:["C#"]},
-  {repo:"LibroDeApuntes-php", title:"Libro de Apuntes", desc:"Sistema de libros y apuntes con PHP puro y MySQL.", tags:["PHP","MySQL"]},
-  {repo:"app-novavision-movil", title:"App Novavisión móvil", desc:"Aplicación móvil Android.", tags:["Kotlin","Android"]}
-];
-function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
-function card(title,desc,tags,repoUrl,demo){
-  var c=el("article","card");c.appendChild(el("h3",null,title));c.appendChild(el("p",null,desc));
-  var ul=el("ul","tags");tags.forEach(function(t){ul.appendChild(el("li",null,t))});c.appendChild(ul);
-  var l=el("div","links");
-  var a=el("a",null,"Código");a.href=repoUrl;l.appendChild(a);
-  if(demo){var d=el("a",null,"Demo en vivo");d.href=demo;l.appendChild(d)}
-  c.appendChild(l);return c;
-}
-var fe=document.getElementById("featured");
-FEATURED.forEach(function(p){fe.appendChild(card(p.title,p.desc,p.tags,"https://github.com/"+USER+"/"+p.repo,p.demo))});
-
-fetch("https://api.github.com/users/"+USER+"/repos?per_page=100&sort=updated")
-.then(function(r){return r.json()})
-.then(function(repos){
-  var skip={}; FEATURED.forEach(function(p){skip[p.repo.toLowerCase()]=1});
-  skip[USER.toLowerCase()]=1; skip["sobremi"]=1; skip["freelancer"]=1;
-  var more=document.getElementById("more");
-  repos.filter(function(r){return !r.fork && !skip[r.name.toLowerCase()]}).forEach(function(r){
-    var tags=r.language?[r.language]:[];
-    more.appendChild(card(r.name,r.description||"Proyecto de desarrollo.",tags,r.html_url,r.homepage&&r.homepage.indexOf("http")==0?r.homepage:null));
-  });
-}).catch(function(){document.getElementById("mas").style.display="none"});
-
-var img=new Image();img.alt="Franco Millanes Araya";
-img.onload=function(){var a=document.getElementById("avatar");a.textContent="";a.appendChild(img)};
-img.src="foto.jpg";
-</script>
+<footer>© <span id="year"></span> Franco Millanes Araya · Curicó, Chile</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
 </body>
 </html>
