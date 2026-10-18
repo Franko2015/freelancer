@@ -1,1402 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franco Millanes Araya - Full Stack Developer | Node.js, Angular, PHP</title>
-    <meta name="description" content="Franco Millanes Araya - Desarrollador Full Stack con 4+ años de experiencia. Especializado en Node.js, Angular, PHP, JavaScript, Android, Automatización y UI/UX. Disponible para trabajar en Curicó o remotamente.">
-    <meta name="keywords" content="Full Stack Developer, Node.js, Angular, PHP, JavaScript, Android, UI/UX, Automatización, Desarrollador Web, Chile, Curicó">
-    <meta name="author" content="Franco Millanes Araya">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta property="og:title" content="Franco Millanes Araya - Full Stack Developer">
-    <meta property="og:description" content="Desarrollador Full Stack con 4+ años de experiencia. Especializado en Node.js, Angular, PHP y más.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.teralinks.pro">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Franco Millanes Araya - Full Stack Developer">
-    <meta name="twitter:description" content="Desarrollador Full Stack con 4+ años de experiencia. Especializado en Node.js, Angular, PHP y más.">
-    <link rel="icon" type="image/png" href="assets/img/avataaars.png">
-    <link rel="apple-touch-icon" href="assets/img/avataaars.png">
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: { extend: { fontFamily: { 'inter': ['Inter', 'sans-serif'] } } }
-        }
-    </script>
-    <style>
-        .gradient-bg { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%); }
-        .text-gradient { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-hover:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 25px 50px rgba(59, 130, 246, 0.3); }
-        .skill-bar { background: linear-gradient(90deg, #3b82f6, #8b5cf6); transition: width 1s ease-out; }
-        .timeline-line { background: linear-gradient(180deg, #3b82f6, #8b5cf6); }
-        .nav-blur { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); }
-        .float-animation { animation: float 4s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
-        
-        /* Smooth transitions for all interactive elements */
-        button, a, input, textarea { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        /* Button hover effects */
-        button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
-        button:active { transform: translateY(0px); }
-        
-        /* Link hover effects */
-        a:hover { transform: translateY(-1px); }
-        
-        /* Smooth scroll */
-        html { scroll-behavior: smooth; }
-        
-        /* Fade in animation */
-        .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Slide in from left */
-        .slide-in-left { animation: slideInLeft 0.8s ease-out forwards; opacity: 0; }
-        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
-        
-        /* Slide in from right */
-        .slide-in-right { animation: slideInRight 0.8s ease-out forwards; opacity: 0; }
-        @keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-        
-        /* Scale in animation */
-        .scale-in { animation: scaleIn 0.6s ease-out forwards; opacity: 0; }
-        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-        
-        /* Pulse animation for availability badge */
-        .pulse-animation { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-        
-        /* Gradient animation for buttons */
-        .gradient-btn { background-size: 200% 200%; animation: gradientMove 3s ease infinite; }
-        @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        
-        /* Glow effect on hover */
-        .glow-hover:hover { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3); }
-        
-        /* Staggered animation delays */
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-        
-        /* Mobile-specific styles */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; line-height: 1.2; }
-            .hero-subtitle { font-size: 1.25rem; }
-            .section-title { font-size: 2rem; }
-            .mobile-menu-overlay { background: rgba(15, 23, 42, 0.98); }
-            .mobile-image { width: 200px !important; height: 200px !important; }
-            .mobile-badge { font-size: 0.75rem; padding: 0.25rem 0.75rem; }
-            .project-card { margin-bottom: 1rem; }
-            .skill-card { margin-bottom: 1rem; }
-            .contact-form { padding: 1rem; }
-            .modal-content { margin: 1rem; max-height: 85vh; }
-            .container { padding-left: 1rem; padding-right: 1rem; }
-            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
-            .px-6 { padding-left: 1rem; padding-right: 1rem; }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title { font-size: 2rem; }
-            .hero-subtitle { font-size: 1.125rem; }
-            .section-title { font-size: 1.75rem; }
-            .mobile-image { width: 150px !important; height: 150px !important; }
-            .container { padding-left: 0.75rem; padding-right: 0.75rem; }
-            .mobile-badge { font-size: 0.625rem; padding: 0.25rem 0.5rem; }
-            .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
-        }
-        
-        /* Modal optimizations */
-        @media (max-width: 640px) {
-            .modal-content { 
-                margin: 0.5rem; 
-                max-height: 90vh; 
-                border-radius: 0.5rem;
-            }
-            .modal-content .p-6 { padding: 1rem; }
-            .modal-content .p-8 { padding: 1.5rem; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Franco Millanes Araya | Desarrollador Full-Stack y Soporte TI</title>
+<meta name="description" content="Portafolio de Franco Millanes Araya, Ingeniero en Informática de Curicó, Chile. Desarrollador Full-Stack (Angular, Node.js, PHP, TypeScript) y Soporte TI. Disponible remoto o presencial en el Maule.">
+<meta property="og:title" content="Franco Millanes Araya | Desarrollador Full-Stack y Soporte TI">
+<meta property="og:description" content="Proyectos reales en Angular, Node.js, PHP y TypeScript. Disponibilidad inmediata, remoto o presencial en el Maule.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Franco Millanes Araya","jobTitle":"Desarrollador Full-Stack e Ingeniero de Soporte TI","email":"mailto:francoding.dev@gmail.com","telephone":"+56998110665","address":{"@type":"PostalAddress","addressLocality":"Romeral, Curicó","addressRegion":"Maule","addressCountry":"CL"},"url":"https://franko2015.github.io/freelancer/","sameAs":["https://github.com/Franko2015","https://www.linkedin.com/in/franco-millanes-araya-a69b2342b/"],"knowsAbout":["Angular","Node.js","PHP","TypeScript","MySQL","Docker","Active Directory","Azure","Microsoft 365"]}
+</script>
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--text:#1b2430;--muted:#5b6675;--accent:#2563eb;--line:#e3e7ee}
+@media (prefers-color-scheme:dark){:root{--bg:#0f141b;--card:#171e28;--text:#e8edf4;--muted:#9aa6b5;--accent:#5b9bff;--line:#262f3c}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+a{color:var(--accent)}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header.hero{padding:48px 0 32px}
+.hero .row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.avatar{width:132px;height:132px;border-radius:50%;object-fit:cover;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;flex:none;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{margin:0 0 4px;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.role{color:var(--accent);font-weight:600;margin:0 0 8px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 16px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.badges li{font-size:13px;border:1px solid var(--line);background:var(--card);padding:3px 10px;border-radius:999px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--accent);color:var(--accent);background:transparent}
+.btn.primary{background:var(--accent);color:#fff}
+section{padding:28px 0}
+h2{font-size:22px;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;padding:0;list-style:none}
+.tags li{font-size:12px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);padding:2px 8px;border-radius:6px}
+.links{display:flex;gap:14px;font-size:14px;font-weight:600}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.skill b{display:block;margin-bottom:4px}
+.skill span{color:var(--muted);font-size:14px}
+.tl{list-style:none;padding:0;margin:0}
+.tl li{border-left:3px solid var(--accent);padding:0 0 16px 14px;margin-left:4px}
+.tl small{color:var(--muted)}
+footer{padding:28px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+#more .card{padding:14px}
+</style>
 </head>
-
-<body class="font-inter bg-slate-900 text-white">
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-slate-900 z-[100] flex items-center justify-center">
-        <div class="text-center">
-            <div class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p class="text-gray-400 text-sm">Cargando...</p>
-        </div>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="row">
+    <div class="avatar" id="avatar" aria-label="Foto de Franco Millanes">FM</div>
+    <div>
+      <h1>Franco Millanes Araya</h1>
+      <p class="role">Desarrollador Full-Stack · Ingeniero de Soporte TI</p>
+      <p class="lead">Ingeniero en Informática de Romeral, Curicó (Chile). Construyo aplicaciones web con Angular, Node.js, TypeScript y PHP, y tengo experiencia real administrando infraestructura TI para empresas (Active Directory, Azure, Microsoft 365, Fortinet, VMware).</p>
+      <ul class="badges">
+        <li>Disponibilidad inmediata</li>
+        <li>Remoto o presencial en el Maule</li>
+        <li>Indefinido, plazo fijo o freelance</li>
+      </ul>
+      <div class="btns">
+        <a class="btn primary" href="mailto:francoding.dev@gmail.com">Contactar</a>
+        <a class="btn" href="https://github.com/Franko2015">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/franco-millanes-araya-a69b2342b/">LinkedIn</a>
+        <a class="btn" href="CV_Franco_Millanes_Desarrollador.docx" download>CV Desarrollador</a>
+        <a class="btn" href="CV_Franco_Millanes_Soporte_TI.docx" download>CV Soporte TI</a>
+      </div>
     </div>
-    
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-800" role="navigation" aria-label="Navegación principal">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-gradient">FMA</div>
-                <div class="hidden md:flex space-x-8" role="menubar">
-                    <a href="#inicio" class="hover:text-blue-400 transition" role="menuitem" aria-label="Ir a inicio">Inicio</a>
-                    <a href="#sobre-mi" class="hover:text-blue-400 transition" role="menuitem" aria-label="Ir a sobre mí">Sobre Mí</a>
-                    <a href="#proyectos" class="hover:text-blue-400 transition" role="menuitem" aria-label="Ir a proyectos">Proyectos</a>
-                    <a href="#habilidades" class="hover:text-blue-400 transition" role="menuitem" aria-label="Ir a habilidades">Habilidades</a>
-                    <a href="#experiencia" class="hover:text-blue-400 transition" role="menuitem" aria-label="Ir a experiencia">Experiencia</a>
-                    <a href="#contacto" class="hover:text-blue-400 transition" role="menuitem" aria-label="Ir a contacto">Contacto</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-800 transition" aria-label="Abrir menú de navegación móvil">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+  </div>
+</div></header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="min-h-screen flex items-center gradient-bg relative overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 opacity-10 rounded-full float-animation"></div>
-            <div class="absolute top-40 right-20 w-40 h-40 bg-purple-500 opacity-10 rounded-full float-animation" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-indigo-500 opacity-10 rounded-full float-animation" style="animation-delay: 2s;"></div>
-        </div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left fade-in">
-                    <h1 class="hero-title text-5xl md:text-7xl font-bold mb-6">
-                        Franco <span class="text-gradient">Millanes</span>
-                    </h1>
-                    <h2 class="hero-subtitle text-2xl md:text-3xl text-gray-300 mb-6">Full Stack Developer</h2>
-                    <p class="text-lg text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
-                        🚀 Desarrollador Full-Stack con 4+ años de experiencia especializado en crear experiencias cautivadoras. Enfocado en <strong class="text-white">Angular, Node.js, JavaScript, Android, Automatización y UI/UX</strong>. Mi objetivo: crear software que realmente genere impacto.
-                    </p>
-                    <div class="flex flex-wrap gap-3 md:gap-4 mb-8 justify-center md:justify-start delay-200">
-                        <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 hover:bg-slate-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 transition text-sm md:text-base glow-hover">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/franco-alberto-m/" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 transition text-sm md:text-base glow-hover">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="mailto:francoding.dev@gmail.com" class="bg-purple-600 hover:bg-purple-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 transition text-sm md:text-base glow-hover">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
-                    </div>
-                    <div class="flex gap-3 md:gap-4 justify-center md:justify-start delay-300">
-                        <button onclick="showCV()" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition text-sm md:text-base gradient-btn glow-hover" aria-label="Ver curriculum vitae">
-                            <i class="fas fa-eye mr-2"></i>Ver CV
-                        </button>
-                        <button onclick="downloadCV()" class="border border-gray-600 hover:border-gray-500 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition text-sm md:text-base glow-hover" aria-label="Descargar curriculum vitae">
-                            <i class="fas fa-download mr-2"></i>Descargar CV
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2 flex justify-center slide-in-right delay-400">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl float-animation mobile-image glow-hover">
-                            <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                        <div class="absolute -bottom-2 md:-bottom-4 -right-2 md:-right-4 bg-green-500 text-gray-900 px-3 md:px-6 py-1 md:py-2 rounded-full font-bold mobile-badge text-xs md:text-sm pulse-animation">
-                            ✨ Disponible para trabajar
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main class="wrap">
+<section id="proyectos">
+  <h2>Proyectos destacados</h2>
+  <p class="sub">Todo el código es público en mi GitHub y varios tienen demo en vivo.</p>
+  <div class="grid" id="featured"></div>
+</section>
 
-    <!-- Sobre Mí -->
-    <section id="sobre-mi" class="py-20 bg-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4 text-gradient">Sobre Mí</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                    🚀 Desarrollador Full-Stack apasionado por crear experiencias cautivadoras y software que genere impacto real
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div>
-                    <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
-                        Como desarrollador Full-Stack con <strong class="text-white">4+ años de experiencia</strong>, me especializo en crear aplicaciones web completas que combinan frontend moderno con backend robusto. Mi enfoque principal es <strong class="text-white">Angular, Node.js, JavaScript, Android, Automatización y UI/UX</strong>.
-                    </p>
-                    <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
-                    Mi experiencia en soporte técnico y administración de sistemas me da una perspectiva única del ciclo completo del desarrollo, desde la arquitectura hasta el despliegue y mantenimiento. Estoy enfocado en la <strong class="text-white">optimización de negocios, desarrollo web moderno, experiencia de usuario y soluciones escalables</strong>.
-                    </p>
-                    <p class="text-gray-300 text-sm md:text-base">
-                        🎯 <strong class="text-white">Mi objetivo:</strong> Crear software que realmente genere impacto. Actualmente disponible para trabajar en empresas cerca de <strong class="text-white">Curicó</strong> o de forma <strong class="text-white">remota</strong>.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4 md:gap-6">
-                    <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700">
-                        <i class="fas fa-code text-blue-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
-                        <h3 class="font-bold text-lg md:text-xl mb-2"><span class="counter" data-target="28">0</span>+ Proyectos</h3>
-                        <p class="text-gray-400 text-xs md:text-sm">Repositorios en GitHub</p>
-                    </div>
-                    <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700">
-                        <i class="fas fa-users text-purple-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
-                        <h3 class="font-bold text-lg md:text-xl mb-2"><span class="counter" data-target="15">0</span>+ Clientes</h3>
-                        <p class="text-gray-400 text-xs md:text-sm">Satisfechos con mi trabajo</p>
-                    </div>
-                    <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700">
-                        <i class="fas fa-clock text-green-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
-                        <h3 class="font-bold text-lg md:text-xl mb-2"><span class="counter" data-target="4">0</span>+ Años</h3>
-                        <p class="text-gray-400 text-xs md:text-sm">Experiencia profesional</p>
-                    </div>
-                    <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700">
-                        <i class="fas fa-award text-yellow-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
-                        <h3 class="font-bold text-lg md:text-xl mb-2">Full Stack</h3>
-                        <p class="text-gray-400 text-xs md:text-sm">Desarrollo completo</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <div class="skills">
+    <div class="skill"><b>Frontend</b><span>Angular, TypeScript, JavaScript, HTML, CSS, Vue.js</span></div>
+    <div class="skill"><b>Backend</b><span>PHP, Node.js, Express, APIs REST, JWT</span></div>
+    <div class="skill"><b>Bases de datos</b><span>MySQL, SQL</span></div>
+    <div class="skill"><b>DevOps</b><span>Docker, Git, Linux, Vercel, Railway, GitHub Pages</span></div>
+    <div class="skill"><b>Infraestructura TI</b><span>Active Directory, Azure, Microsoft 365, Windows Server, VMware, Fortinet, Zabbix, PowerShell</span></div>
+    <div class="skill"><b>IA</b><span>Integración de Google Gemini API</span></div>
+  </div>
+</section>
 
-    <!-- Proyectos -->
-    <section id="proyectos" class="py-20 bg-slate-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Proyectos Destacados</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Los proyectos más completos y desafiantes que he desarrollado
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- InformaDev -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card scale-in delay-100">
-                    <div class="h-40 md:h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-white text-4xl md:text-5xl"></i>
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">InformaDev</h3>
-                        <p class="text-gray-400 mb-4 text-sm md:text-base">Plataforma educativa para gestión de tareas, horarios y asignaturas. Alternativa moderna a Notion.</p>
-                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
-                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">AngularJS</span>
-                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
-                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">MySQL</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 md:gap-3">
-                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                                <i class="fab fa-github text-lg md:text-xl"></i>
-                            </a>
-                            <a href="https://github.com/Franko2015/informadev" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition glow-hover">
-                                <i class="fab fa-github mr-1"></i>Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<section id="experiencia">
+  <h2>Experiencia</h2>
+  <ul class="tl">
+    <li><b>Ingeniero de Soporte TI</b> · Tibox Chile<br><small>04/2024 – 03/2026</small><br>Monitoreo y soporte de servidores, redes y servicios críticos de clientes empresariales; más de 5 tickets diarios y respuesta de 1 hora en emergencias.</li>
+    <li><b>Digitador y administrador del sistema de trazabilidad</b> · APFRUT<br><small>11/2023 – 01/2024</small><br>Administración del sistema de la máquina UNITEC de cerezas: productores, kilos y control de recursos.</li>
+    <li><b>Secretario Administrativo y soporte técnico</b> · Novavisión SpA<br><small>01/2018 – 02/2022</small><br>Atención a clientes, derivación de requerimientos técnicos y soporte básico de redes.</li>
+    <li><b>Ingeniero en Informática</b> · INACAP · 2025<br>Proyecto de título: ERP con asistente de IA para consultar la base de datos.</li>
+    <li><b>Analista Programador</b> · INACAP Curicó · 2022<br>Proyecto de título: sistema web de gestión de eventos y asistentes.</li>
+  </ul>
+</section>
 
-                <!-- Servicios -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card scale-in delay-200">
-                    <div class="h-40 md:h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                        <i class="fas fa-cogs text-white text-4xl md:text-5xl"></i>
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">Servicios Web</h3>
-                        <p class="text-gray-400 mb-4 text-sm md:text-base">Sistema de gestión de servicios empresariales con backend robusto y frontend moderno.</p>
-                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
-                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
-                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Express</span>
-                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">REST API</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 md:gap-3">
-                            <a href="https://github.com/Franko2015/Servicios" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                                <i class="fab fa-github text-lg md:text-xl"></i>
-                            </a>
-                            <a href="https://github.com/Franko2015/Server-servicios" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition glow-hover">
-                                <i class="fab fa-github mr-1"></i>Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<section id="mas">
+  <h2>Más en GitHub</h2>
+  <p class="sub">Lista actualizada automáticamente desde mi cuenta.</p>
+  <div class="grid" id="more"></div>
+</section>
+</main>
 
-                <!-- SistemaPOS -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card scale-in delay-300">
-                    <div class="h-40 md:h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                        <i class="fas fa-cash-register text-white text-4xl md:text-5xl"></i>
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">Sistema POS</h3>
-                        <p class="text-gray-400 mb-4 text-sm md:text-base">Sistema completo de punto de venta con gestión de inventario y procesamiento de pagos.</p>
-                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
-                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">JavaScript</span>
-                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
-                            <span class="bg-red-900 text-red-300 px-2 py-1 rounded text-xs">SQL</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 md:gap-3">
-                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                                <i class="fab fa-github text-lg md:text-xl"></i>
-                            </a>
-                            <a href="https://github.com/Franko2015/SistemaPOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition glow-hover">
-                                <i class="fab fa-github mr-1"></i>Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<footer><div class="wrap">
+  Franco Millanes Araya · Romeral, Curicó, Chile · <a href="mailto:francoding.dev@gmail.com">francoding.dev@gmail.com</a> · <a href="tel:+56998110665">+56 9 9811 0665</a>
+</div></footer>
 
-                <!-- LibroDeApuntes -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card scale-in delay-400">
-                    <div class="h-40 md:h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
-                        <i class="fas fa-book text-white text-4xl md:text-5xl"></i>
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">Libro de Apuntes</h3>
-                        <p class="text-gray-400 mb-4 text-sm md:text-base">Sistema de gestión de libros y apuntes educativos desarrollado con PHP puro y MySQL.</p>
-                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
-                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">PHP</span>
-                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">MySQL</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 md:gap-3">
-                            <a href="https://github.com/Franko2015/LibroDeApuntes-php" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                                <i class="fab fa-github text-lg md:text-xl"></i>
-                            </a>
-                            <a href="https://github.com/Franko2015/LibroDeApuntes-php" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition glow-hover">
-                                <i class="fab fa-github mr-1"></i>Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<script>
+var USER = "Franko2015";
+var FEATURED = [
+  {repo:"Cuaderno-Online", title:"Cuaderno Online (My-Notion)", desc:"App de notas estilo Notion con chatbot de IA (Google Gemini), editor con texto, dibujo y markdown, tema claro/oscuro y diseño responsivo.", tags:["TypeScript","Gemini API","IA"], demo:"https://cuaderno-online-production.up.railway.app/"},
+  {repo:"informadev", title:"InformaDev", desc:"Plataforma para estudiantes: tareas, horarios e información de asignaturas, con autenticación JWT.", tags:["Angular","Node.js","Express","MySQL","JWT"]},
+  {repo:"mitienda", title:"MiTienda", desc:"Aplicación web de tienda en línea desplegada en producción.", tags:["JavaScript","Vercel"], demo:"https://mitienda-iota.vercel.app"},
+  {repo:"totown", title:"ToTown", desc:"Aplicación web desplegada en Vercel.", tags:["JavaScript","Vercel"], demo:"https://totown.vercel.app"},
+  {repo:"nutricom", title:"Nutricom", desc:"Aplicación web desarrollada con Angular.", tags:["Angular","TypeScript"]},
+  {repo:"SistemaMeApunto", title:"Sistema Me Apunto", desc:"Sistema web de inscripción y registro.", tags:["HTML","JavaScript"], demo:"https://sistema-me-apunto.vercel.app"},
+  {repo:"SistemaPOS", title:"Sistema POS", desc:"Sistema de punto de venta de escritorio.", tags:["C#"]},
+  {repo:"LibroDeApuntes-php", title:"Libro de Apuntes", desc:"Sistema de libros y apuntes con PHP puro y MySQL.", tags:["PHP","MySQL"]},
+  {repo:"app-novavision-movil", title:"App Novavisión móvil", desc:"Aplicación móvil Android.", tags:["Kotlin","Android"]}
+];
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+function card(title,desc,tags,repoUrl,demo){
+  var c=el("article","card");c.appendChild(el("h3",null,title));c.appendChild(el("p",null,desc));
+  var ul=el("ul","tags");tags.forEach(function(t){ul.appendChild(el("li",null,t))});c.appendChild(ul);
+  var l=el("div","links");
+  var a=el("a",null,"Código");a.href=repoUrl;l.appendChild(a);
+  if(demo){var d=el("a",null,"Demo en vivo");d.href=demo;l.appendChild(d)}
+  c.appendChild(l);return c;
+}
+var fe=document.getElementById("featured");
+FEATURED.forEach(function(p){fe.appendChild(card(p.title,p.desc,p.tags,"https://github.com/"+USER+"/"+p.repo,p.demo))});
 
-                <!-- API-Proyectos -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card scale-in delay-500">
-                    <div class="h-40 md:h-48 bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center">
-                        <i class="fas fa-server text-white text-4xl md:text-5xl"></i>
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">API Proyectos</h3>
-                        <p class="text-gray-400 mb-4 text-sm md:text-base">API RESTful robusta para gestión de proyectos con Node.js y Express.</p>
-                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
-                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
-                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Express</span>
-                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">REST API</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 md:gap-3">
-                            <a href="https://github.com/Franko2015/API-PROYECTOS" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                                <i class="fab fa-github text-lg md:text-xl"></i>
-                            </a>
-                            <a href="https://github.com/Franko2015/API-PROYECTOS" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition glow-hover">
-                                <i class="fab fa-github mr-1"></i>Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
+fetch("https://api.github.com/users/"+USER+"/repos?per_page=100&sort=updated")
+.then(function(r){return r.json()})
+.then(function(repos){
+  var skip={}; FEATURED.forEach(function(p){skip[p.repo.toLowerCase()]=1});
+  skip[USER.toLowerCase()]=1; skip["sobremi"]=1; skip["freelancer"]=1;
+  var more=document.getElementById("more");
+  repos.filter(function(r){return !r.fork && !skip[r.name.toLowerCase()]}).forEach(function(r){
+    var tags=r.language?[r.language]:[];
+    more.appendChild(card(r.name,r.description||"Proyecto de desarrollo.",tags,r.html_url,r.homepage&&r.homepage.indexOf("http")==0?r.homepage:null));
+  });
+}).catch(function(){document.getElementById("mas").style.display="none"});
 
-                <!-- TODO-PHP -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover project-card scale-in">
-                    <div class="h-40 md:h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-white text-4xl md:text-5xl"></i>
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">InvestiCorp</h3>
-                        <p class="text-gray-400 mb-4 text-sm md:text-base">Plataforma de inversión con backend robusto y frontend moderno para gestión financiera.</p>
-                        <div class="flex flex-wrap gap-1 md:gap-2 mb-4">
-                            <span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Node.js</span>
-                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-xs">Express</span>
-                            <span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">React</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 md:gap-3">
-                            <a href="https://github.com/Franko2015/investicorp" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                                <i class="fab fa-github text-lg md:text-xl"></i>
-                            </a>
-                            <a href="https://github.com/Franko2015/investicorp-back-endd" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-2 md:px-3 py-1 rounded text-xs md:text-sm transition glow-hover">
-                                <i class="fab fa-github mr-1"></i>Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Habilidades -->
-    <section id="habilidades" class="py-20 bg-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4 text-gradient">Habilidades Técnicas</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                    Tecnologías y competencias que domino profesionalmente
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Frontend -->
-                <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 skill-card fade-in delay-100 glow-hover">
-                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-blue-400">Frontend & Mobile</h3>
-                    <div class="space-y-3 md:space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">HTML/CSS/JavaScript</span>
-                                <span class="text-blue-400 text-sm md:text-base">90%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">AngularJS/Angular</span>
-                                <span class="text-blue-400 text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">React/Vue.js</span>
-                                <span class="text-blue-400 text-sm md:text-base">75%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">Android Development</span>
-                                <span class="text-blue-400 text-sm md:text-base">70%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">UI/UX Design</span>
-                                <span class="text-blue-400 text-sm md:text-base">80%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Backend -->
-                <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 skill-card fade-in delay-200 glow-hover">
-                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-green-400">Backend & APIs</h3>
-                    <div class="space-y-3 md:space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">Node.js/Express</span>
-                                <span class="text-green-400 text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">PHP</span>
-                                <span class="text-green-400 text-sm md:text-base">80%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">Python</span>
-                                <span class="text-green-400 text-sm md:text-base">70%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">REST APIs</span>
-                                <span class="text-green-400 text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Database & DevOps -->
-                <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 skill-card fade-in delay-300 glow-hover">
-                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-purple-400">Database & DevOps</h3>
-                    <div class="space-y-3 md:space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">MySQL/PostgreSQL</span>
-                                <span class="text-purple-400 text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">MongoDB</span>
-                                <span class="text-purple-400 text-sm md:text-base">75%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">Git/Docker</span>
-                                <span class="text-purple-400 text-sm md:text-base">80%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm md:text-base">Automatización</span>
-                                <span class="text-purple-400 text-sm md:text-base">75%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2">
-                                <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soft Skills -->
-            <div class="mt-8 md:mt-12">
-                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">Habilidades Blandas</h3>
-                <div class="flex flex-wrap justify-center gap-2 md:gap-3">
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Comunicación Efectiva</span>
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Trabajo en Equipo</span>
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Resolución de Problemas</span>
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Liderazgo</span>
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Adaptabilidad</span>
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Creatividad</span>
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Optimización de Negocios</span>
-                    <span class="bg-slate-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm">Experiencia de Usuario</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experiencia -->
-    <section id="experiencia" class="py-20 bg-slate-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4 text-gradient">Experiencia Laboral</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                    Mi trayectoria profesional en el mundo tecnológico
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Desktop Timeline -->
-                <div class="relative hidden md:block">
-                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-2 timeline-line rounded-full"></div>
-                    
-                    <div class="space-y-16">
-                        <!-- Experience 1 -->
-                        <div class="flex items-center fade-in delay-100">
-                            <div class="w-5/12 text-right pr-8">
-                                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300 glow-hover">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <h3 class="text-xl font-bold">Ingeniero de Soporte TI</h3>
-                                    </div>
-                                    <h4 class="text-blue-400 mb-2 flex items-center justify-end">
-                                        <i class="fas fa-building mr-2"></i>TIBOX
-                                    </h4>
-                                    <p class="text-gray-400 text-sm mb-3 flex items-center justify-end">
-                                        <i class="fas fa-calendar mr-2"></i>Mayo 2024 - Marzo 2026
-                                    </p>
-                                    <p class="text-gray-300">Soporte técnico especializado y administración de sistemas. Optimización de procesos y soluciones tecnológicas.</p>
-                                </div>
-                            </div>
-                            <div class="w-2/12 flex justify-center">
-                                <div class="w-6 h-6 bg-blue-500 rounded-full ring-4 ring-blue-500/30 shadow-lg shadow-blue-500/50 glow-hover scale-in delay-100"></div>
-                            </div>
-                            <div class="w-5/12"></div>
-                        </div>
-                        
-                        <!-- Experience 2 -->
-                        <div class="flex items-center fade-in delay-200">
-                            <div class="w-5/12"></div>
-                            <div class="w-2/12 flex justify-center">
-                                <div class="w-6 h-6 bg-purple-500 rounded-full ring-4 ring-purple-500/30 shadow-lg shadow-purple-500/50 glow-hover scale-in delay-200"></div>
-                            </div>
-                            <div class="w-5/12 pl-8">
-                                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 glow-hover">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <h3 class="text-xl font-bold">Asistente de Informática</h3>
-                                    </div>
-                                    <h4 class="text-purple-400 mb-2 flex items-center">
-                                        <i class="fas fa-building mr-2"></i>APFRUT
-                                    </h4>
-                                    <p class="text-gray-400 text-sm mb-3 flex items-center">
-                                        <i class="fas fa-calendar mr-2"></i>Noviembre 2022 - Dic 2022
-                                    </p>
-                                    <p class="text-gray-300">Soporte técnico y mantenimiento de sistemas.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Experience 3 -->
-                        <div class="flex items-center fade-in delay-300">
-                            <div class="w-5/12 text-right pr-8">
-                                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-green-500 transition-all duration-300 glow-hover">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <h3 class="text-xl font-bold">Secretario Administrativo</h3>
-                                    </div>
-                                    <h4 class="text-green-400 mb-2 flex items-center justify-end">
-                                        <i class="fas fa-building mr-2"></i>SOC. TEL. NOVAVISIÓN SPA
-                                    </h4>
-                                    <p class="text-gray-400 text-sm mb-3 flex items-center justify-end">
-                                        <i class="fas fa-calendar mr-2"></i>Enero 2018 - Febrero 2023
-                                    </p>
-                                    <p class="text-gray-300">Gestión administrativa y soporte técnico integral.</p>
-                                </div>
-                            </div>
-                            <div class="w-2/12 flex justify-center">
-                                <div class="w-6 h-6 bg-green-500 rounded-full ring-4 ring-green-500/30 shadow-lg shadow-green-500/50 glow-hover scale-in delay-300"></div>
-                            </div>
-                            <div class="w-5/12"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile Cards -->
-                <div class="md:hidden space-y-4">
-                    <!-- Experience 1 -->
-                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 fade-in delay-100 glow-hover">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-lg md:text-xl font-bold">Ingeniero de Soporte TI</h3>
-                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">Marzo 2026</span>
-                        </div>
-                        <h4 class="text-blue-400 mb-2 flex items-center text-sm md:text-base">
-                            <i class="fas fa-briefcase mr-2"></i>TIBOX
-                        </h4>
-                        <p class="text-gray-400 text-sm mb-3 flex items-center">
-                            <i class="fas fa-clock mr-2"></i>Mayo 2024 - Marzo 2026
-                        </p>
-                        <p class="text-gray-300 text-sm md:text-base">Soporte técnico especializado y administración de sistemas. Optimización de procesos y soluciones tecnológicas.</p>
-                    </div>
-
-                    <!-- Experience 2 -->
-                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-4 md:p-6 rounded-xl border-l-4 border-purple-500 fade-in delay-200 glow-hover">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-lg md:text-xl font-bold">Asistente de Informática</h3>
-                        </div>
-                        <h4 class="text-purple-400 mb-2 flex items-center text-sm md:text-base">
-                            <i class="fas fa-briefcase mr-2"></i>APFRUT
-                        </h4>
-                        <p class="text-gray-400 text-sm mb-3 flex items-center">
-                            <i class="fas fa-clock mr-2"></i>Nov 2022 - Dic 2022
-                        </p>
-                        <p class="text-gray-300 text-sm md:text-base">Soporte técnico y mantenimiento de sistemas.</p>
-                    </div>
-
-                    <!-- Experience 3 -->
-                    <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-4 md:p-6 rounded-xl border-l-4 border-green-500 fade-in delay-300 glow-hover">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-lg md:text-xl font-bold">Secretario Administrativo</h3>
-                        </div>
-                        <h4 class="text-green-400 mb-2 flex items-center text-sm md:text-base">
-                            <i class="fas fa-briefcase mr-2"></i>SOC. TEL. NOVAVISIÓN SPA
-                        </h4>
-                        <p class="text-gray-400 text-sm mb-3 flex items-center">
-                            <i class="fas fa-clock mr-2"></i>Enero 2018 - Febrero 2023
-                        </p>
-                        <p class="text-gray-300 text-sm md:text-base">Gestión administrativa y soporte técnico integral.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-4 text-gradient">Contacto</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                    🎯 Actualmente <strong class="text-white">disponible para trabajar</strong> en empresas cerca de <strong class="text-white">Curicó</strong> o de forma <strong class="text-white">remota</strong>. ¡Conectemos!
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    <div>
-                        <form id="contact-form" class="space-y-4 contact-form" role="form" aria-label="Formulario de contacto">
-                            <div>
-                                <label for="form-name" class="sr-only">Nombre</label>
-                                <input type="text" id="form-name" placeholder="Nombre *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base glow-hover" aria-required="true">
-                            </div>
-                            <div>
-                                <label for="form-email" class="sr-only">Email</label>
-                                <input type="email" id="form-email" placeholder="Email *" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base glow-hover" aria-required="true">
-                            </div>
-                            <div>
-                                <label for="form-company" class="sr-only">Empresa</label>
-                                <input type="text" id="form-company" placeholder="Empresa (opcional)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base glow-hover">
-                            </div>
-                            <div>
-                                <label for="form-message" class="sr-only">Mensaje</label>
-                                <textarea id="form-message" placeholder="Mensaje *" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 text-sm md:text-base glow-hover" aria-required="true"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-3 rounded-lg font-semibold transition flex items-center justify-center text-sm md:text-base gradient-btn glow-hover" aria-label="Enviar mensaje por WhatsApp">
-                                <i class="fab fa-whatsapp mr-2"></i>Enviar por WhatsApp
-                            </button>
-                        </form>
-                    </div>
-                    
-                    <div class="space-y-4 md:space-y-6">
-                        <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 fade-in delay-100 glow-hover">
-                            <h3 class="font-bold mb-3 md:mb-4 text-blue-400 text-lg md:text-xl">Información Directa</h3>
-                            <div class="space-y-2 md:space-y-3">
-                                <div class="flex items-center gap-2 md:gap-3">
-                                    <i class="fas fa-envelope text-gray-400 text-sm md:text-base"></i>
-                                    <span class="text-sm md:text-base">francoding.dev@gmail.com</span>
-                                </div>
-                                <div class="flex items-center gap-2 md:gap-3">
-                                    <i class="fas fa-phone text-gray-400 text-sm md:text-base"></i>
-                                    <span class="text-sm md:text-base">+56998110665</span>
-                                </div>
-                                <div class="flex items-center gap-2 md:gap-3">
-                                    <i class="fas fa-globe text-gray-400 text-sm md:text-base"></i>
-                                    <span class="text-sm md:text-base"><a href="https://www.teralinks.pro" target="_blank" class="text-white hover:text-blue-400 transition">www.teralinks.pro</a></span>
-                                </div>
-                                <div class="flex items-center gap-2 md:gap-3">
-                                    <i class="fas fa-map-marker-alt text-gray-400 text-sm md:text-base"></i>
-                                    <span class="text-sm md:text-base">Curicó, Chile 🇨🇱</span>
-                                </div>
-                                <div class="flex items-center gap-2 md:gap-3 mt-3 md:mt-4">
-                                    <i class="fas fa-briefcase text-green-400 text-sm md:text-base"></i>
-                                    <span class="text-sm md:text-base text-green-400 font-medium">✨ Disponible: Presencial o Remoto</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-slate-900 p-4 md:p-6 rounded-xl border border-slate-700 fade-in delay-200 glow-hover">
-                            <h3 class="font-bold mb-3 md:mb-4 text-purple-400 text-lg md:text-xl">Redes Sociales</h3>
-                            <div class="flex gap-2 md:gap-3 justify-center">
-                                <a href="https://github.com/Franko2015" target="_blank" class="bg-slate-800 p-2 md:p-3 rounded-lg hover:bg-slate-700 transition glow-hover">
-                                    <i class="fab fa-github text-lg md:text-xl"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/franco-alberto-m/" target="_blank" class="bg-slate-800 p-2 md:p-3 rounded-lg hover:bg-slate-700 transition glow-hover">
-                                    <i class="fab fa-linkedin text-lg md:text-xl"></i>
-                                </a>
-                                <a href="https://wa.me/56998110665" target="_blank" class="bg-slate-800 p-2 md:p-3 rounded-lg hover:bg-slate-700 transition glow-hover">
-                                    <i class="fab fa-whatsapp text-lg md:text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 bg-slate-950 border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-gradient">Franco Millanes</h3>
-                    <p class="text-gray-400 text-sm mb-4">Desarrollador Full Stack apasionado por crear experiencias digitales impactantes.</p>
-                    <div class="flex gap-3">
-                        <a href="https://github.com/Franko2015" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/franco-alberto-m/" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://wa.me/56998110665" target="_blank" class="text-gray-400 hover:text-white transition glow-hover">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-gradient">Enlaces Rápidos</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
-                        <li><a href="#sobre-mi" class="hover:text-white transition">Sobre Mí</a></li>
-                        <li><a href="#proyectos" class="hover:text-white transition">Proyectos</a></li>
-                        <li><a href="#habilidades" class="hover:text-white transition">Habilidades</a></li>
-                        <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-gradient">Contacto</h3>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><i class="fas fa-envelope mr-2"></i>francoding.dev@gmail.com</li>
-                        <li><i class="fas fa-phone mr-2"></i>+56998110665</li>
-                        <li><i class="fas fa-globe mr-2"></i><a href="https://www.teralinks.pro" target="_blank" class="hover:text-white transition">www.teralinks.pro</a></li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i>Curicó, Chile 🇨🇱</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 Franco Millanes Araya. Todos los derechos reservados.</p>
-                <p class="text-gray-500 text-sm mt-2">Hecho con ❤️ y mucho café en Chile</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:from-blue-600 hover:to-purple-700 glow-hover z-40" aria-label="Volver al inicio" title="Volver al inicio">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Modal CV -->
-    <div id="cv-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-2 md:p-4">
-        <div class="bg-slate-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content">
-            <div class="p-4 md:p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl md:text-2xl font-bold">Mi Curriculum Vitae</h3>
-                    <button onclick="closeCV()" class="text-gray-400 hover:text-white p-2">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                <div class="bg-slate-900 p-4 md:p-8 rounded-lg">
-                    <div class="text-center mb-6 md:mb-8">
-                        <img src="assets/img/avataaars.png" alt="Franco Millanes" class="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4" loading="lazy">
-                        <h1 class="text-2xl md:text-3xl font-bold mb-2">Franco Millanes Araya</h1>
-                        <p class="text-gray-400 text-sm md:text-base">Ingeniero Informático | Full Stack Developer</p>
-                    </div>
-                    
-                    <div class="space-y-4 md:space-y-6 text-gray-300 text-sm md:text-base">
-                        <div>
-                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-blue-400">Resumen Profesional</h2>
-                            <p class="text-sm md:text-base">🚀 Desarrollador Full-Stack con 4+ años de experiencia especializado en crear experiencias cautivadoras. Enfocado en Angular, Node.js, JavaScript, Android, Automatización y UI/UX. Mi objetivo: crear software que realmente genere impacto. Actualmente disponible para trabajar en empresas cerca de Curicó o de forma remota.</p>
-                        </div>
-                        
-                        <div>
-                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-green-400">Experiencia Laboral</h2>
-                            <div class="space-y-3 md:space-y-4">
-                                <div class="border-l-4 border-blue-500 pl-3 md:pl-4">
-                                    <h3 class="font-bold text-sm md:text-base">Ingeniero de Soporte TI</h3>
-                                    <p class="text-gray-400 text-xs md:text-sm">TIBOX | Mayo 2024 - Marzo 2026</p>
-                                    <p class="text-xs md:text-sm">Soporte técnico especializado y administración de sistemas. Optimización de procesos y soluciones tecnológicas.</p>
-                                </div>
-                                <div class="border-l-4 border-purple-500 pl-3 md:pl-4">
-                                    <h3 class="font-bold text-sm md:text-base">Asistente de Informática</h3>
-                                    <p class="text-gray-400 text-xs md:text-sm">APFRUT | Nov 2022 - Dic 2022</p>
-                                    <p class="text-xs md:text-sm">Soporte técnico y mantenimiento de sistemas informáticos.</p>
-                                </div>
-                                <div class="border-l-4 border-green-500 pl-3 md:pl-4">
-                                    <h3 class="font-bold text-sm md:text-base">Secretario Administrativo</h3>
-                                    <p class="text-gray-400 text-xs md:text-sm">SOC. TEL. NOVAVISIÓN SPA | Ene 2018 - Feb 2023</p>
-                                    <p class="text-xs md:text-sm">Gestión administrativa y soporte técnico integral.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-purple-400">Habilidades Técnicas</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                                <div>
-                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Frontend & Mobile</h3>
-                                    <p class="text-xs md:text-sm">HTML, CSS, JavaScript, AngularJS, Angular, React, Vue.js, Android Development, UI/UX Design</p>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Backend & APIs</h3>
-                                    <p class="text-xs md:text-sm">Node.js, Express, PHP, Python, REST APIs</p>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Base de Datos</h3>
-                                    <p class="text-xs md:text-sm">MySQL, PostgreSQL, MongoDB, SQL Server</p>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Herramientas & DevOps</h3>
-                                    <p class="text-xs md:text-sm">Git, Docker, AWS, Firebase, Automatización</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-yellow-400">Educación</h2>
-                            <p class="border-l-4 border-yellow-500 pl-3 md:pl-4 text-sm md:text-base">
-                                <strong class="text-sm md:text-base">Ingeniería en Informática</strong><br>
-                                INACAP<br>
-                                <strong class="text-sm md:text-base">Analista Programador</strong><br>
-                                INACAP
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-red-400">Contacto</h2>
-                            <p class="text-sm md:text-base">📧 francoding.dev@gmail.com<br>
-                            📱 +56998110665<br>
-                            🌐 <a href="https://www.teralinks.pro" target="_blank" class="text-white hover:text-blue-400">www.teralinks.pro</a><br>
-                            📍 Curicó, Chile (Disponible presencial o remoto)<br>
-                            🔗 github.com/Franko2015<br>
-                            💼 linkedin.com/in/franco-alberto-m/</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-2 md:p-4">
-        <div class="bg-slate-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-content">
-            <div class="p-4 md:p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 id="project-title" class="text-xl md:text-2xl font-bold"></h3>
-                    <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white p-2">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                <div id="project-content" class="text-sm md:text-base"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-slate-900 bg-opacity-98 z-40 hidden mobile-menu-overlay">
-        <div class="flex flex-col items-center justify-center h-full space-y-6 p-4">
-            <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <a href="#inicio" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Inicio</a>
-            <a href="#sobre-mi" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Sobre Mí</a>
-            <a href="#proyectos" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Proyectos</a>
-            <a href="#habilidades" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Habilidades</a>
-            <a href="#experiencia" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Experiencia</a>
-            <a href="#contacto" onclick="toggleMobileMenu()" class="text-xl md:text-2xl hover:text-blue-400 transition font-medium">Contacto</a>
-        </div>
-    </div>
-
-    <script>
-        // Mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // CV Modal
-        function showCV() {
-            document.getElementById('cv-modal').classList.remove('hidden');
-        }
-
-        function closeCV() {
-            document.getElementById('cv-modal').classList.add('hidden');
-        }
-
-        function downloadCV() {
-            // Download the existing PDF file
-            const link = document.createElement('a');
-            link.href = 'Franco Millanes Araya.pdf';
-            link.download = 'Franco Millanes Araya CV.pdf';
-            link.click();
-        }
-
-        // Project Modal
-        const projectDetails = {
-            'informadev': {
-                title: 'InformaDev - Plataforma Educativa',
-                content: `
-                    <div class="space-y-4">
-                        <p class="text-gray-300">Plataforma educativa completa para estudiantes que permite organizar tareas, horarios y obtener información sobre asignaturas. Diseñada como una alternativa superior a Notion con mejor experiencia de usuario.</p>
-                        <div>
-                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
-                            <ul class="list-disc list-inside text-gray-300 space-y-1">
-                                <li>Gestión de tareas con fechas límite</li>
-                                <li>Horarios personalizados con notificaciones</li>
-                                <li>Información detallada de asignaturas</li>
-                                <li>Sistema de autenticación JWT</li>
-                                <li>Interfaz moderna y responsiva</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">AngularJS</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Express.js</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">MySQL</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JWT</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'servicios': {
-                title: 'Servicios Web - Sistema Empresarial',
-                content: `
-                    <div class="space-y-4">
-                        <p class="text-gray-300">Sistema completo de gestión de servicios empresariales con backend robusto y frontend moderno. Diseñado para optimizar procesos de negocio y mejorar la eficiencia operativa.</p>
-                        <div>
-                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
-                            <ul class="list-disc list-inside text-gray-300 space-y-1">
-                                <li>Gestión completa de servicios y clientes</li>
-                                <li>Sistema de agendamiento y seguimiento</li>
-                                <li>Panel administrativo intuitivo</li>
-                                <li>API RESTful para integraciones</li>
-                                <li>Sistema de notificaciones automáticas</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Express</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">REST API</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JavaScript</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Base de Datos</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'sistema-pos': {
-                title: 'Sistema POS - Point of Sale',
-                content: `
-                    <div class="space-y-4">
-                        <p class="text-gray-300">Sistema completo de punto de venta diseñado para gestión comercial. Incluye control de inventario, gestión de productos y procesamiento de ventas.</p>
-                        <div>
-                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
-                            <ul class="list-disc list-inside text-gray-300 space-y-1">
-                                <li>Gestión completa de inventario</li>
-                                <li>Procesamiento de pagos múltiples métodos</li>
-                                <li>Control de productos y categorías</li>
-                                <li>Reportes en tiempo real</li>
-                                <li>Interfaz intuitiva para cajeros</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JavaScript</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">SQL</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HTML/CSS</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'libro-apuntes': {
-                title: 'Libro de Apuntes - Sistema Educativo',
-                content: `
-                    <div class="space-y-4">
-                        <p class="text-gray-300">Sistema de gestión de libros y apuntes educativos desarrollado con PHP puro y MySQL para instituciones educativas.</p>
-                        <div>
-                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
-                            <ul class="list-disc list-inside text-gray-300 space-y-1">
-                                <li>Gestión de libros y apuntes</li>
-                                <li>Categorización por materias</li>
-                                <li>Búsqueda avanzada de contenido</li>
-                                <li>Interfaz administrativa</li>
-                                <li>Base de datos centralizada</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">PHP</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">MySQL</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HTML</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">CSS</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'api-proyectos': {
-                title: 'API Proyectos - REST API',
-                content: `
-                    <div class="space-y-4">
-                        <p class="text-gray-300">API RESTful robusta para gestión de proyectos con Node.js y Express. Diseñada para ser escalable y fácil de consumir.</p>
-                        <div>
-                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
-                            <ul class="list-disc list-inside text-gray-300 space-y-1">
-                                <li>Endpoints RESTful completos</li>
-                                <li>Autenticación y autorización</li>
-                                <li>Validación de datos</li>
-                                <li>Manejo de errores</li>
-                                <li>Documentación API</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Node.js</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">Express</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">REST API</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">JSON</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'todo-php': {
-                title: 'TODO App PHP - Gestor de Tareas',
-                content: `
-                    <div class="space-y-4">
-                        <p class="text-gray-300">Aplicación de gestión de tareas desarrollada con PHP puro y MySQL. Proyecto práctico para demostrar habilidades en desarrollo backend.</p>
-                        <div>
-                            <h4 class="font-bold mb-2 text-blue-400">Características:</h4>
-                            <ul class="list-disc list-inside text-gray-300 space-y-1">
-                                <li>Crear, editar y eliminar tareas</li>
-                                <li>Marcar tareas como completadas</li>
-                                <li>Filtrado por estado</li>
-                                <li>Interfaz simple y funcional</li>
-                                <li>Persistencia en base de datos</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2 text-green-400">Tecnologías:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">PHP</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">MySQL</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HTML</span>
-                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">CSS</span>
-                            </div>
-                        </div>
-                    </div>
-                `
-            }
-        };
-
-        function showProjectDetails(projectId) {
-            const modal = document.getElementById('project-modal');
-            const title = document.getElementById('project-title');
-            const content = document.getElementById('project-content');
-            
-            const project = projectDetails[projectId];
-            if (project) {
-                title.textContent = project.title;
-                content.innerHTML = project.content;
-                modal.classList.remove('hidden');
-            }
-        }
-
-        function closeProjectModal() {
-            document.getElementById('project-modal').classList.add('hidden');
-        }
-
-        // Contact form
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('form-name').value;
-            const email = document.getElementById('form-email').value;
-            const company = document.getElementById('form-company').value;
-            const message = document.getElementById('form-message').value;
-            
-            // Validate required fields
-            if (!name || !email || !message) {
-                showNotification('Por favor, completa los campos obligatorios (*)', 'error');
-                return;
-            }
-            
-            // Create WhatsApp message
-            const whatsappMessage = encodeURIComponent(
-                `🚀 *NUEVO CONTACTO DESDE PORTAFOLIO* 🚀\n\n` +
-                `👤 *Nombre:* ${name}\n` +
-                `📧 *Email:* ${email}\n` +
-                `${company ? `🏢 *Empresa:* ${company}\n` : ''}` +
-                `💬 *Mensaje:* ${message}\n\n` +
-                `📅 *Fecha:* ${new Date().toLocaleDateString('es-CL')}\n` +
-                `⏰ *Hora:* ${new Date().toLocaleTimeString('es-CL')}\n\n` +
-                `---\n` +
-                `🌟 *Enviado desde el portafolio de Franco Millanes Araya*`
-            );
-            
-            // Open WhatsApp with pre-filled message
-            const whatsappLink = `https://wa.me/56998110665?text=${whatsappMessage}`;
-            window.open(whatsappLink, '_blank');
-            
-            // Show success message
-            showNotification('Abriendo WhatsApp...', 'success');
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Notification function
-        function showNotification(message, type) {
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `fixed top-20 right-6 px-6 py-4 rounded-lg text-white font-medium z-50 transform translate-x-full transition-transform duration-300`;
-            
-            // Set color based on type
-            if (type === 'success') {
-                notification.classList.add('bg-green-600');
-            } else if (type === 'error') {
-                notification.classList.add('bg-red-600');
-            }
-            
-            notification.textContent = message;
-            
-            // Add to page
-            document.body.appendChild(notification);
-            
-            // Animate in
-            setTimeout(() => {
-                notification.classList.remove('translate-x-full');
-                notification.classList.add('translate-x-0');
-            }, 100);
-            
-            // Remove after 3 seconds
-            setTimeout(() => {
-                notification.classList.remove('translate-x-0');
-                notification.classList.add('translate-x-full');
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 3000);
-        }
-
-        // Close modals on outside click
-        document.getElementById('cv-modal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeCV();
-        });
-
-        document.getElementById('project-modal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeProjectModal();
-        });
-
-        // Close mobile menu when clicking outside
-        document.getElementById('mobile-menu').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
-                toggleMobileMenu();
-            }
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.add('opacity-0', 'invisible');
-                backToTopButton.classList.remove('opacity-100', 'visible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Scroll Animations with Intersection Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
-            observer.observe(section);
-        });
-
-        // Add animation class
-        const style = document.createElement('style');
-        style.textContent = `
-            .animate-on-scroll {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Active navigation link indicator
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-400');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('text-blue-400');
-                }
-            });
-        });
-
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        };
-
-        // Trigger counter animation when "Sobre Mí" section is visible
-        const sobreMiSection = document.getElementById('sobre-mi');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counterObserver.observe(sobreMiSection);
-
-        // Preloader
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            preloader.style.opacity = '0';
-            preloader.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        });
-    </script>
+var img=new Image();img.alt="Franco Millanes Araya";
+img.onload=function(){var a=document.getElementById("avatar");a.textContent="";a.appendChild(img)};
+img.src="foto.jpg";
+</script>
 </body>
 </html>
